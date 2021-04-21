@@ -1,10 +1,15 @@
 package server
 
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import server.data.Level
+import server.data.LevelItem
 import spark.Request
 import spark.Response
 import spark.Spark
 import spark.kotlin.*
+
+val levels = mutableListOf<Level>()
 
 fun main() {
     staticFiles.location("/public")
@@ -29,6 +34,24 @@ fun handleEditor(response: Response, request: Request){
 
 fun handleGame(response: Response, request: Request){
     response.redirect("/game/index.html")
+}
+
+fun handleAddLevel(response: Response, request: Request){
+    val type = object : TypeToken<Level>() {}.type
+    try{
+        val lvl: Level = Gson().fromJson(request.body(), type)
+        levels.add(lvl)
+    } catch (e: Exception){
+        response.body(Gson().toJson(e))
+        response.status(400)
+        return
+    }
+    response.status(200)
+}
+
+fun handleGetLevel(response: Response, request: Request){
+    response.body(Gson().toJson(levels.last()))
+    response.status(200)
 }
 
 // utils
