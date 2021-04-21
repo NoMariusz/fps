@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         "home": "./src/home/app.js",
         "editor": "./src/editor/app.js",
+        "game": "./src/game/app.js",
     },
     output: {
         filename: "[name]/bundle.js",
@@ -28,6 +29,12 @@ module.exports = {
             chunks: ['editor'],
             template: './src/editor/index.html',
             filename: './editor/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            chunks: ['game'],
+            template: './src/game/index.html',
+            filename: './game/index.html'
         }),
     ],
 

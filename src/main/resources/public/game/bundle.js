@@ -50,13 +50,13 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/home/app.js":
+/***/ "./src/game/app.js":
 /*!*************************!*\
-  !*** ./src/home/app.js ***!
+  !*** ./src/game/app.js ***!
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://test_webpack/./src/home/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n\r\n\r\nconsole.log(\"Game  js script start loading\");\n\n//# sourceURL=webpack://test_webpack/./src/game/app.js?");
 
 /***/ })
 
@@ -132,7 +132,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/home/app.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/game/app.js");
 /******/ 	
 /******/ })()
 ;
