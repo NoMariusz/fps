@@ -1,6 +1,6 @@
 package server.data
 
-class Level (
+data class Level (
     var size: Int,
-    var levels: Array<LevelItem>,
+    var levels: List<LevelItem>,
 )

@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FPS</title>
-<script defer src="../editor/bundle.js?95b96ac8275d18a02b87"></script></head>
+<script defer src="../editor/bundle.js?1fad8f34582e35629eb8"></script></head>
 <body>
-    <h1>Editor</h1>
-    <a href="/">go home</a>
+    <h1 class="header">Editor</h1>
+    <nav>
+        <a href="/">go home</a>
+    </nav>
+    <div id="full" class="editContent">
+        <div id="board" class="editElem"></div>
+        <div id="actions" class="editElem">
+            <button class="actionbtn mono" id="saveLevelBtn">Save level</button>
+            <button class="actionbtn mono" id="loadLevelBtn">Upload level</button>
+
+            <button class="actionbtn" id="wall">Wall</button>
+            <button class="actionbtn" id="enemy">Enemy</button>
+            <button class="actionbtn" id="light">Light</button>
+            <button class="actionbtn" id="treasure">Treasure</button>
+            <button class="actionbtn" id="clear">Clear</button>
+        </div>
+        <div id="jsonDisplayer" class="editElem">
+            <pre>
+                <p id="jsonData"></p>
+            </pre>
+        </div>
+    </div>
 </body>
 </html>

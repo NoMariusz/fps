@@ -1,15 +1,17 @@
 package server
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import server.data.Level
+import server.data.LevelDeserializer
 import server.data.LevelItem
 import spark.Request
 import spark.Response
 import spark.Spark
 import spark.kotlin.*
 
-val levels = mutableListOf<Level>()
+var actualLevel: Level? = null
 
 fun main() {
     staticFiles.location("/public")
@@ -18,8 +20,8 @@ fun main() {
     get("/") { handleHome(response, request) }
     get("/game") { handleGame(response, request) }
     get("/editor") { handleEditor(response, request)  }
-    post("/editor/add") {  } // dodanie danych levelu
-    post("/editor/load") {  } // pobranie danych levelu
+    post("/editor/add") { handleAddLevel(response, request) }
+    get("/editor/load") { handleGetLevel(response, request) }
 }
 
 // routeFunc
@@ -36,22 +38,20 @@ fun handleGame(response: Response, request: Request){
     response.redirect("/game/index.html")
 }
 
-fun handleAddLevel(response: Response, request: Request){
-    val type = object : TypeToken<Level>() {}.type
+fun handleAddLevel(response: Response, request: Request): String {
     try{
-        val lvl: Level = Gson().fromJson(request.body(), type)
-        levels.add(lvl)
+        val gSon = GsonBuilder().registerTypeAdapter(Level::class.java, LevelDeserializer()).create()
+        actualLevel = gSon.fromJson(request.body(), Level::class.java)
+        println(actualLevel.toString())
     } catch (e: Exception){
-        response.body(Gson().toJson(e))
-        response.status(400)
-        return
+        return sendRes(response, Gson().toJson(e), 400)
     }
-    response.status(200)
+    return sendRes(response, "success", 200)
 }
 
-fun handleGetLevel(response: Response, request: Request){
-    response.body(Gson().toJson(levels.last()))
-    response.status(200)
+fun handleGetLevel(response: Response, request: Request): String {
+    val jsonLevel = Gson().toJson(actualLevel)
+    return sendRes(response, jsonLevel, 200)
 }
 
 // utils
@@ -61,4 +61,12 @@ fun getParam(req: Request, name: String): String?{
         return null
     }
     return req.queryParams(name)
+}
+
+fun sendRes(response: Response, data: String, code: Int): String {
+    response.header("Access-Control-Allow-Origin", "*")
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    response.body(data)
+    response.status(code)
+    return data
 }
