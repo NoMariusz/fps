@@ -1,4 +1,4 @@
-.editContent{
+.editContent {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6,25 +6,25 @@
     flex-wrap: wrap;
 }
 
-.editElem{
+.editElem {
     margin: 0.5rem;
 }
 
 /* board */
 
-#board{
+#board {
     width: 30rem;
     height: 30rem;
 }
 
-.cell{
+.cell {
     float: left;
     border: 0.1rem solid #121212;
 }
 
 /* action */
 
-#actions{
+#actions {
     min-width: 5rem;
     min-height: 10rem;
     display: flex;
@@ -33,7 +33,7 @@
     justify-content: center;
 }
 
-.actionbtn{
+.actionbtn {
     margin: 0.2rem;
     padding: 0.5rem;
     font-size: 1.3rem;
@@ -43,18 +43,18 @@
     max-width: 20rem;
 }
 
-.actionbtn:hover{
+.actionbtn:hover {
     box-shadow: gray 0.1rem 0.2rem 0.5rem;
 }
 
-.mono{
+.mono {
     color: #dcdcdc;
     background-color: #121212;
 }
 
 /* jsonDisplayer */
 
-#jsonDisplayer{
+#jsonDisplayer {
     flex: 1 1 1;
     width: 20rem;
     height: 30rem;

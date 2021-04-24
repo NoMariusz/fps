@@ -1,16 +1,16 @@
 import "../style.css";
 import "./style.css";
-import $ from "../libs/jquery-3.6.0.min.js"
+import $ from "../libs/jquery-3.6.0.min.js";
 
 const SIZE = 10;
-const ACTIONS = ['wall', 'enemy', 'treasure', 'light', 'clear'];
+const ACTIONS = ["wall", "enemy", "treasure", "light", "clear"];
 const ACTION_TO_COLOR = {
     wall: "darkgreen",
     enemy: "red",
     treasure: "dodgerblue",
     light: "yellow",
-    clear: "lightgray"
-}
+    clear: "lightgray",
+};
 
 let selectedAction = "clear";
 let levelData = [];
@@ -47,8 +47,8 @@ const makeCell = (row, column, parent) => {
 const cellClick = (row, column, cell) => {
     // clear clicked cell cell
     clearCell(row, column);
-    
-    if (selectedAction != "clear"){
+
+    if (selectedAction != "clear") {
         // add new element ot lvl
         const levelElem = makeElementObj(row, column);
         levelData.push(levelElem);
@@ -59,24 +59,24 @@ const cellClick = (row, column, cell) => {
 };
 
 const makeElementObj = (row, column) => {
-    idCounter ++;
+    idCounter++;
     return {
         id: idCounter,
         y: 0,
         x: row,
         z: column,
         type: selectedAction,
-    }
-}
+    };
+};
 
 const clearCell = (row, column) => {
-    const foundIdx = levelData.findIndex((el) => (el.x == row && el.z == column));
-    if (foundIdx == -1){
+    const foundIdx = levelData.findIndex((el) => el.x == row && el.z == column);
+    if (foundIdx == -1) {
         return false;
     }
     levelData.splice(foundIdx, 1);
     return true;
-}
+};
 
 const loadLevelToBoard = () => {
     const parent = $("#board");
@@ -84,13 +84,18 @@ const loadLevelToBoard = () => {
     for (let row = 0; row < SIZE; row++) {
         for (let column = 0; column < SIZE; column++) {
             const cell = makeCell(row, column, parent);
-            const foundCell = levelData.find((el) => (el.x == row && el.z == column));
-            if (foundCell){
-                $(cell).css("background-color", ACTION_TO_COLOR[foundCell.type]);
+            const foundCell = levelData.find(
+                (el) => el.x == row && el.z == column
+            );
+            if (foundCell) {
+                $(cell).css(
+                    "background-color",
+                    ACTION_TO_COLOR[foundCell.type]
+                );
             }
         }
     }
-}
+};
 
 // actions stuff
 
@@ -99,60 +104,60 @@ const connectActionsButtons = () => {
     $("#saveLevelBtn").on("click", saveLevel);
     $("#loadLevelBtn").on("click", loadLevel);
     // connect changing element buttons
-    ACTIONS.forEach(action => {
+    ACTIONS.forEach((action) => {
         $(`#${action}`).on("click", () => {
             selectedAction = action;
-        })
-        $(`#${action}`).css("backgroundColor", ACTION_TO_COLOR[action])
+        });
+        $(`#${action}`).css("backgroundColor", ACTION_TO_COLOR[action]);
     });
-}
+};
 
 const saveLevel = async () => {
     const reqOptions = {
         method: "POST",
-        body: JSON.stringify(makeLevelObj())
-    }
+        body: JSON.stringify(makeLevelObj()),
+    };
     console.log("Level ob to save: ", makeLevelObj());
     const res = await fetch("/editor/add", reqOptions);
-    if (res.ok){
+    if (res.ok) {
         alert("Level saved");
     }
-}
+};
 
 const loadLevel = async () => {
     const res = await fetch("/editor/load");
-    if (!res.ok){
+    if (!res.ok) {
         return false;
     }
     const data = await res.json();
     console.log("loading level: ", data);
     loadLevelToPage(data.levels);
     return true;
-}
+};
 
 const makeLevelObj = () => {
     return {
         size: SIZE,
-        levels: levelData
-    }
-}
+        levels: levelData,
+    };
+};
 
 const loadLevelToPage = (level) => {
     // set level data
     levelData = level;
     updateJsonDisplayer();
     // set id
-    const ids = levelData.map(e => (e.id))
-    const lastId = Math.max( ...ids );
-    idCounter = lastId
+    const ids = levelData.map((e) => e.id);
+    const lastId = Math.max(...ids);
+    idCounter = lastId;
     // load level to board
     loadLevelToBoard();
-}
+};
 
 // jsonDisplayer
 
 const updateJsonDisplayer = () => {
-    $("#jsonData").text(JSON.stringify(levelData, null, 4))
-}
+    $("#jsonData").text(JSON.stringify(levelData, null, 4));
+};
 
 main();
