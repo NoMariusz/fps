@@ -1,5 +1,6 @@
 import Floor from "./items/Floor.js";
 import { CELL_SIZE, ITEMS_MAP } from "./constants.js";
+import Celling from "./items/Celling.js";
 
 export default class LevelRenderer {
     constructor(scene, renderer) {
@@ -17,8 +18,9 @@ export default class LevelRenderer {
         data.items.forEach((item) => {
             this.createItem(item);
         });
-        // make level floor
+        // make level floor and celling
         this.loadFloor();
+        this.loadCelling();
     }
 
     createItem(itemData) {
@@ -41,6 +43,11 @@ export default class LevelRenderer {
         this.floor = new Floor(this.scene, floorSize);
     }
 
+    loadCelling() {
+        const size = CELL_SIZE * this.size;
+        this.celling = new Celling(this.scene, size);
+    }
+
     // public level modifiers
 
     changeLightsIntensity(value) {
@@ -59,5 +66,13 @@ export default class LevelRenderer {
             }
         });
         this.renderer.changeShaddows(value);
+    }
+
+    hideCelling() {
+        this.celling.mesh.visible = false;
+    }
+
+    showCelling() {
+        this.celling.mesh.visible = true;
     }
 }

@@ -106,10 +106,10 @@ export default class GUI {
         this.makeGuiCheckControl("view from above", (e) => {
             if (e.target.checked) {
                 this.camera.aboveView();
-                this.levelRenderer.hideCelling();
+                this.levelRenderer.hideCeilling();
             } else {
                 this.camera.normalView();
-                this.levelRenderer.showCelling();
+                this.levelRenderer.showCeilling();
             }
         });
     }

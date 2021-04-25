@@ -4,6 +4,7 @@ import {
     TextureLoader,
     MeshPhongMaterial,
     DoubleSide,
+    RepeatWrapping,
 } from "three";
 import image from "../../../gfx/materials/rocks_hexagons_base.jpg";
 
@@ -15,10 +16,16 @@ export default class Floor {
         this.size = margins ? size * 1.5 : size;
 
         this.geometry = new PlaneGeometry(this.size, this.size, 10, 10);
+
+        const texture = new TextureLoader().load( TEXTURE );
+        texture.wrapS = RepeatWrapping;
+        texture.wrapT = RepeatWrapping;
+        texture.repeat.set( 5, 5 );
+
         this.material = new MeshPhongMaterial({
             shininess: 50,
             side: DoubleSide,
-            map: new TextureLoader().load(TEXTURE),
+            map: texture,
         });
         this.geometry.rotateX(Math.PI / 2);
 
