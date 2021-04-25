@@ -7,11 +7,13 @@ import {
 } from "three";
 import image from "../../../gfx/materials/wall_base.jpg";
 import { CELL_SIZE } from "../constants.js";
+import LevelItem from "./LevelItem.js"
 
 const TEXTURE = image;
 
-export default class Wall {
+export default class Wall extends LevelItem {
     constructor(scene) {
+        super();
         this.scene = scene;
         this.size = CELL_SIZE;
 

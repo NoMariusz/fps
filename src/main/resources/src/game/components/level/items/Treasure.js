@@ -5,9 +5,11 @@ import {
     Mesh,
 } from "three";
 import { CELL_SIZE } from "../constants.js";
+import LevelItem from "./LevelItem.js"
 
-export default class Treasure {
+export default class Treasure extends LevelItem {
     constructor(scene) {
+        super();
         this.scene = scene;
         this.size = CELL_SIZE / 10;
 

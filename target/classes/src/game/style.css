@@ -6,3 +6,22 @@
     align-items: center;
     justify-content: center;
 }
+
+#guiRoot{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    background-color: rgba(44,44,44,0.4);
+    color: #dcdcdc;
+}
+
+#guiRoot .control{
+    flex: 1 1 1;
+    padding: 0.5rem;
+    width: 33%;
+    display: flex;
+}

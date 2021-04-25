@@ -7,8 +7,11 @@ import {
     Mesh,
 } from "three";
 
-export default class Light {
+import LevelItem from "./LevelItem.js"
+
+export default class Light extends LevelItem {
     constructor(scene, castShadow = false) {
+        super();
         this.scene = scene;
         this.container = new Object3D();
         this.castShadow = castShadow;
@@ -37,5 +40,13 @@ export default class Light {
 
     getContainer() {
         return this.container;
+    }
+
+    changeIntensity(value){
+        this.light.intensity = value;
+    }
+
+    changeCastShaddows(value){
+        this.light.castShadow = value;
     }
 }

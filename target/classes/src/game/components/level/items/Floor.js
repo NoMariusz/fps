@@ -32,4 +32,8 @@ export default class Floor {
         }
         this.scene.add(this.mesh);
     }
+
+    getContainer() {
+        return this.mesh;
+    }
 }
