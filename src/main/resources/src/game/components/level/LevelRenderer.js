@@ -56,11 +56,8 @@ export default class LevelRenderer {
             switch (item.type) {
                 case "light":
                     item.changeCastShaddows(value);
-                default:
-                    item.getContainer().receiveShadow = value;
             }
         });
-        this.floor.getContainer().receiveShadow = value;
         this.renderer.changeShaddows(value);
     }
 }

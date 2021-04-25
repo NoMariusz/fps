@@ -10,11 +10,10 @@ import {
 import LevelItem from "./LevelItem.js"
 
 export default class Light extends LevelItem {
-    constructor(scene, castShadow = false) {
+    constructor(scene) {
         super();
         this.scene = scene;
         this.container = new Object3D();
-        this.castShadow = castShadow;
 
         this.init();
         this.scene.add(this.container);
@@ -22,7 +21,6 @@ export default class Light extends LevelItem {
 
     init() {
         this.light = new PointLight(0xfdffff, 0.2, 0, 2);
-        this.light.castShadow = this.castShadow;
         this.light.position.set(0, 0, 0); // pos in container
 
         this.container.add(this.light);

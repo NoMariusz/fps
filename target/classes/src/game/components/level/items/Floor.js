@@ -25,6 +25,7 @@ export default class Floor {
         this.mesh = new Mesh(this.geometry, this.material);
         this.mesh.position.x = this.size / 2;
         this.mesh.position.z = this.size / 2;
+        this.mesh.receiveShadow = true;
         // center floor with margins
         if (margins){
             this.mesh.position.x /= 1.5;

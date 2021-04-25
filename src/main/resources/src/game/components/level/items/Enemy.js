@@ -23,6 +23,7 @@ export default class Enemy extends LevelItem {
         });
 
         this.mesh = new Mesh(this.geometry, this.material);
+        this.mesh.castShadow = true;
         this.scene.add(this.mesh);
     }
 
