@@ -5,11 +5,12 @@ import {
     MeshPhongMaterial,
     DoubleSide,
 } from "three";
-import image from "../../../gfx/materials/rocks_hexagons_base.jpg";
+import image from "../../../gfx/materials/rock_base.jpg";
+import { CELL_SIZE } from "../constants.js";
 
 const TEXTURE = image;
 
-export default class Floor {
+export default class Celling {
     constructor(scene, size, margins = true) {
         this.scene = scene;
         this.size = margins ? size * 1.5 : size;
@@ -25,7 +26,9 @@ export default class Floor {
         this.mesh = new Mesh(this.geometry, this.material);
         this.mesh.receiveShadow = true;
 
-        // center floor
+        this.mesh.position.y = CELL_SIZE;
+
+        // center celling
         this.mesh.position.x = this.size / 2;
         this.mesh.position.z = this.size / 2;
         if (margins) {

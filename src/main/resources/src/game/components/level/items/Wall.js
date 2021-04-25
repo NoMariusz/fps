@@ -5,9 +5,9 @@ import {
     DoubleSide,
     Mesh,
 } from "three";
-import image from "../../../gfx/materials/wall_base.jpg";
+import image from "../../../gfx/materials/concrete_wall_base.jpg";
 import { CELL_SIZE } from "../constants.js";
-import LevelItem from "./LevelItem.js"
+import LevelItem from "./LevelItem.js";
 
 const TEXTURE = image;
 
