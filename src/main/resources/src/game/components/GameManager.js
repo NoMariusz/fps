@@ -3,6 +3,7 @@ import Renderer from './Renderer.js';
 import Camera from './Camera.js';
 import LoadingDisplayer from "./LoadingDisplayer.js"
 import HelperAxes from "./HelperAxes.js";
+import LevelLoader from "./level/LevelLoader.js";
 
 export default class Render {
     constructor(container) {
@@ -15,9 +16,10 @@ export default class Render {
         this.renderer = new Renderer(this.scene, container);
         this.camera = new Camera(this.renderer.threeRenderer);
         this.helperAxes = new HelperAxes(this.scene);
+        this.levelLoader = new LevelLoader(this.scene);
 
+        this.loadLevel();
         this.render();
-        this.loadingDisplayer.hideLoading();
     }
 
     render() {
@@ -25,5 +27,10 @@ export default class Render {
 
         this.renderer.render(this.scene, this.camera.threeCamera);
         requestAnimationFrame(this.render.bind(this));
+    }
+
+    async loadLevel() {
+        await this.levelLoader.load();
+        this.loadingDisplayer.hideLoading();
     }
 }

@@ -20,6 +20,7 @@
     "build": "webpack",
     "watch": "webpack --progress --watch",
     "server": "webpack serve --open",
+    "serve": "webpack --mode development --watch",
     "go": "webpack && webpack serve --open"
   },
   "author": "",

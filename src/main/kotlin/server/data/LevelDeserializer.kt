@@ -11,7 +11,7 @@ class LevelDeserializer : JsonDeserializer<Level> {
 
         val size = json.get("size").asInt
         val type = object : TypeToken<List<LevelItem>>() {}.type
-        val list: MutableList<LevelItem> = Gson().fromJson(json.get("levels").asJsonArray, type)
+        val list: MutableList<LevelItem> = Gson().fromJson(json.get("items").asJsonArray, type)
 
         return Level(size, list)
     }

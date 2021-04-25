@@ -131,20 +131,20 @@ const loadLevel = async () => {
     }
     const data = await res.json();
     console.log("loading level: ", data);
-    loadLevelToPage(data.levels);
+    loadLevelToPage(data.items);
     return true;
 };
 
 const makeLevelObj = () => {
     return {
         size: SIZE,
-        levels: levelData,
+        items: levelData,
     };
 };
 
-const loadLevelToPage = (level) => {
+const loadLevelToPage = (items) => {
     // set level data
-    levelData = level;
+    levelData = items;
     updateJsonDisplayer();
     // set id
     const ids = levelData.map((e) => e.id);

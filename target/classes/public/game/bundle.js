@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/game/style.css":
+/*!******************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/game/style.css ***!
+  \******************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \".flex{\\r\\n    display: flex;\\r\\n}\\r\\n\\r\\n.center{\\r\\n    align-items: center;\\r\\n    justify-content: center;\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://test_webpack/./src/game/style.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
@@ -16,7 +27,7 @@
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"*{\\r\\n    margin: 0;\\r\\n    padding: 0;\\r\\n    box-sizing: border-box;\\r\\n}\\r\\n\\r\\nbody{\\r\\n    font-family: Arial, Helvetica, sans-serif;\\r\\n}\\r\\n\\r\\nnav{\\r\\n    width: 100%;\\r\\n    display: flex;\\r\\n    flex-direction: row;\\r\\n    align-items: center;\\r\\n    justify-content: center;\\r\\n}\\r\\nnav a{\\r\\n    padding: 1rem;\\r\\n    color: black;\\r\\n    text-decoration: underline;\\r\\n}\\r\\n\\r\\n.header{\\r\\n    padding: 1rem;\\r\\n    width: 100%;\\r\\n    text-align: center;\\r\\n}\\r\\n\\r\\n.full{\\r\\n    width: 100%;\\r\\n    height: 100%;\\r\\n}\\r\\n\\r\\n.hidden{\\r\\n    display: none;\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://test_webpack/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"*{\\r\\n    margin: 0;\\r\\n    padding: 0;\\r\\n    box-sizing: border-box;\\r\\n}\\r\\n\\r\\nbody{\\r\\n    font-family: Arial, Helvetica, sans-serif;\\r\\n}\\r\\n\\r\\nnav{\\r\\n    width: 100%;\\r\\n    display: flex;\\r\\n    flex-direction: row;\\r\\n    align-items: center;\\r\\n    justify-content: center;\\r\\n}\\r\\nnav a{\\r\\n    padding: 1rem;\\r\\n    color: black;\\r\\n    text-decoration: underline;\\r\\n}\\r\\n\\r\\n.header{\\r\\n    padding: 1rem;\\r\\n    width: 100%;\\r\\n    text-align: center;\\r\\n}\\r\\n\\r\\n.full{\\r\\n    width: 100%;\\r\\n    height: 100%;\\r\\n}\\r\\n\\r\\n.forceFull{\\r\\n    width: 100%;\\r\\n    height: 100%;\\r\\n    min-height: 80vh;\\r\\n}\\r\\n\\r\\n.hidden{\\r\\n    display: none !important;\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://test_webpack/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -28,6 +39,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (cssWithMappingToString) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join(\"\");\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === \"string\") {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, \"\"]];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\n//# sourceURL=webpack://test_webpack/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./src/game/style.css":
+/*!****************************!*\
+  !*** ./src/game/style.css ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./style.css */ \"./node_modules/css-loader/dist/cjs.js!./src/game/style.css\");\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_1__.default, options);\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});\n\n//# sourceURL=webpack://test_webpack/./src/game/style.css?");
 
 /***/ }),
 
@@ -64,6 +86,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/game/gfx/materials/rocks_hexagons_base.jpg":
+/*!********************************************************!*\
+  !*** ./src/game/gfx/materials/rocks_hexagons_base.jpg ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"images/b6156bd32651e60685fcecffa860db1f-rocks_hexagons_base.jpg\");\n\n//# sourceURL=webpack://test_webpack/./src/game/gfx/materials/rocks_hexagons_base.jpg?");
+
+/***/ }),
+
+/***/ "./src/game/gfx/materials/wall_base.jpg":
+/*!**********************************************!*\
+  !*** ./src/game/gfx/materials/wall_base.jpg ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"images/7c6b378a2aff0048595075bfed6efc94-wall_base.jpg\");\n\n//# sourceURL=webpack://test_webpack/./src/game/gfx/materials/wall_base.jpg?");
+
+/***/ }),
+
 /***/ "./src/game/app.js":
 /*!*************************!*\
   !*** ./src/game/app.js ***!
@@ -71,7 +115,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n/* harmony import */ var _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../libs/jquery-3.6.0.min.js */ \"./src/libs/jquery-3.6.0.min.js\");\n/* harmony import */ var _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_GameManager_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/GameManager.js */ \"./src/game/components/GameManager.js\");\n\r\n\r\n\r\n\r\n\r\nconst main = () => {\r\n    new _components_GameManager_js__WEBPACK_IMPORTED_MODULE_2__.default(_libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_1___default()(\"#root\")[0]);\r\n}\r\n\r\nmain();\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/game/style.css\");\n/* harmony import */ var _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../libs/jquery-3.6.0.min.js */ \"./src/libs/jquery-3.6.0.min.js\");\n/* harmony import */ var _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _components_GameManager_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/GameManager.js */ \"./src/game/components/GameManager.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst main = () => {\r\n    new _components_GameManager_js__WEBPACK_IMPORTED_MODULE_3__.default(_libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_2___default()(\"#root\")[0]);\r\n}\r\n\r\nmain();\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/app.js?");
 
 /***/ }),
 
@@ -82,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Camera)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nclass Camera {\r\n    constructor(renderer) {\r\n        const width = renderer.domElement.width;\r\n        const height = renderer.domElement.height;\r\n\r\n        this.threeCamera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera(75, width / height, 0.1, 10000);\r\n        this.threeCamera.position.set(2, 2, 2);\r\n        this.threeCamera.lookAt(new three__WEBPACK_IMPORTED_MODULE_0__.Vector3(0, 0, 0))\r\n\r\n        this.updateSize(renderer);\r\n\r\n        window.addEventListener('resize', () => this.updateSize(renderer), false);\r\n    }\r\n\r\n    updateSize(renderer) {\r\n\r\n        this.threeCamera.aspect = renderer.domElement.width / renderer.domElement.height;\r\n        this.threeCamera.updateProjectionMatrix();\r\n    }\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/Camera.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Camera)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nclass Camera {\r\n    constructor(renderer) {\r\n        const width = renderer.domElement.width;\r\n        const height = renderer.domElement.height;\r\n\r\n        this.threeCamera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera(75, width / height, 0.1, 10000);\r\n        this.threeCamera.position.set(500, 850, 500);\r\n        this.threeCamera.lookAt(new three__WEBPACK_IMPORTED_MODULE_0__.Vector3(500, 0, 500))\r\n\r\n        this.updateSize(renderer);\r\n\r\n        window.addEventListener('resize', () => this.updateSize(renderer), false);\r\n    }\r\n\r\n    updateSize(renderer) {\r\n\r\n        this.threeCamera.aspect = renderer.domElement.width / renderer.domElement.height;\r\n        this.threeCamera.updateProjectionMatrix();\r\n    }\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/Camera.js?");
 
 /***/ }),
 
@@ -93,18 +137,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Main)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _Renderer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Renderer */ \"./src/game/components/Renderer.js\");\n/* harmony import */ var _Camera__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Camera */ \"./src/game/components/Camera.js\");\n/* harmony import */ var _Ico__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Ico */ \"./src/game/components/Ico.js\");\n\r\n\r\n\r\n\r\n\r\nclass Main {\r\n    constructor(container) {\r\n        // właściwości klasy\r\n        this.container = container;\r\n        this.scene = new three__WEBPACK_IMPORTED_MODULE_3__.Scene();\r\n        this.renderer = new _Renderer__WEBPACK_IMPORTED_MODULE_0__.default(this.scene, container);\r\n        this.camera = new _Camera__WEBPACK_IMPORTED_MODULE_1__.default(this.renderer.threeRenderer);\r\n        this.ico = new _Ico__WEBPACK_IMPORTED_MODULE_2__.default(this.scene);\r\n\r\n        this.render();\r\n    }\r\n\r\n    render() {\r\n\r\n        console.log(\"render leci\")\r\n\r\n        this.renderer.render(this.scene, this.camera.threeCamera);\r\n        this.ico.update() // obrót ico\r\n\r\n        requestAnimationFrame(this.render.bind(this));\r\n    }\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/GameManager.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Render)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _Renderer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Renderer.js */ \"./src/game/components/Renderer.js\");\n/* harmony import */ var _Camera_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Camera.js */ \"./src/game/components/Camera.js\");\n/* harmony import */ var _LoadingDisplayer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LoadingDisplayer.js */ \"./src/game/components/LoadingDisplayer.js\");\n/* harmony import */ var _HelperAxes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HelperAxes.js */ \"./src/game/components/HelperAxes.js\");\n/* harmony import */ var _level_LevelLoader_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./level/LevelLoader.js */ \"./src/game/components/level/LevelLoader.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nclass Render {\r\n    constructor(container) {\r\n        this.container = container;\r\n\r\n        this.loadingDisplayer = new _LoadingDisplayer_js__WEBPACK_IMPORTED_MODULE_2__.default(this.container);\r\n        this.loadingDisplayer.showLoading();\r\n\r\n        this.scene = new three__WEBPACK_IMPORTED_MODULE_5__.Scene();\r\n        this.renderer = new _Renderer_js__WEBPACK_IMPORTED_MODULE_0__.default(this.scene, container);\r\n        this.camera = new _Camera_js__WEBPACK_IMPORTED_MODULE_1__.default(this.renderer.threeRenderer);\r\n        this.helperAxes = new _HelperAxes_js__WEBPACK_IMPORTED_MODULE_3__.default(this.scene);\r\n        this.levelLoader = new _level_LevelLoader_js__WEBPACK_IMPORTED_MODULE_4__.default(this.scene);\r\n\r\n        this.loadLevel();\r\n        this.render();\r\n    }\r\n\r\n    render() {\r\n        console.log(\"Game Manager: render()\")\r\n\r\n        this.renderer.render(this.scene, this.camera.threeCamera);\r\n        requestAnimationFrame(this.render.bind(this));\r\n    }\r\n\r\n    async loadLevel() {\r\n        await this.levelLoader.load();\r\n        this.loadingDisplayer.hideLoading();\r\n    }\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/GameManager.js?");
 
 /***/ }),
 
-/***/ "./src/game/components/Ico.js":
-/*!************************************!*\
-  !*** ./src/game/components/Ico.js ***!
-  \************************************/
+/***/ "./src/game/components/HelperAxes.js":
+/*!*******************************************!*\
+  !*** ./src/game/components/HelperAxes.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Ico)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nclass Ico {\r\n\r\n    constructor(scene) {\r\n        console.log(\"ico\")\r\n        this.scene = scene;\r\n        this.geometry = new three__WEBPACK_IMPORTED_MODULE_0__.IcosahedronGeometry();\r\n        this.material = new three__WEBPACK_IMPORTED_MODULE_0__.MeshNormalMaterial();\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_0__.Mesh(this.geometry, this.material);\r\n        this.scene.add(this.mesh)\r\n    }\r\n    update() {\r\n        this.mesh.rotation.y += 0.01\r\n    }\r\n\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/Ico.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ HelperAxes)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nclass HelperAxes{\r\n    constructor(scene){\r\n        this.scene = scene;\r\n        this.axes = new three__WEBPACK_IMPORTED_MODULE_0__.AxesHelper(1000);\r\n        this.scene.add(this.axes);\r\n    }\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/HelperAxes.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/LoadingDisplayer.js":
+/*!*************************************************!*\
+  !*** ./src/game/components/LoadingDisplayer.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LoadingDisplayer)\n/* harmony export */ });\n/* harmony import */ var _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../libs/jquery-3.6.0.min.js */ \"./src/libs/jquery-3.6.0.min.js\");\n/* harmony import */ var _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconst LOADING_BLOCK = _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_0___default()(\"#loading\")\r\n\r\nclass LoadingDisplayer{\r\n    constructor(mainBlock){\r\n        this.mainBlock = mainBlock\r\n    }\r\n\r\n    showLoading(){\r\n        _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_0___default()(this.mainBlock).addClass(\"hidden\");\r\n        LOADING_BLOCK.removeClass(\"hidden\");\r\n    }\r\n\r\n    hideLoading(){\r\n        _libs_jquery_3_6_0_min_js__WEBPACK_IMPORTED_MODULE_0___default()(this.mainBlock).removeClass(\"hidden\");\r\n        LOADING_BLOCK.addClass(\"hidden\");\r\n    }\r\n\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/LoadingDisplayer.js?");
 
 /***/ }),
 
@@ -116,6 +171,94 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Renderer)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nclass Renderer {\r\n    constructor(scene, container) {\r\n\r\n        this.scene = scene;\r\n        this.container = container;\r\n        this.threeRenderer = new three__WEBPACK_IMPORTED_MODULE_0__.WebGLRenderer({ antialias: true });\r\n        this.threeRenderer.setClearColor(0xffffff);\r\n        this.container.appendChild(this.threeRenderer.domElement);\r\n        this.updateSize();\r\n\r\n        document.addEventListener('DOMContentLoaded', () => this.updateSize(), false);\r\n        window.addEventListener('resize', () => this.updateSize(), false);\r\n    }\r\n\r\n    updateSize() {\r\n        this.threeRenderer.setSize(window.innerWidth, window.innerHeight);\r\n    }\r\n\r\n    render(scene, camera) {\r\n        this.threeRenderer.render(scene, camera);\r\n    }\r\n}\n\n//# sourceURL=webpack://test_webpack/./src/game/components/Renderer.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/LevelLoader.js":
+/*!**************************************************!*\
+  !*** ./src/game/components/level/LevelLoader.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LevelLoader)\n/* harmony export */ });\n/* harmony import */ var _LevelRenderer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LevelRenderer.js */ \"./src/game/components/level/LevelRenderer.js\");\n\r\n\r\nconst TEST_RAW_LEVEL =\r\n'{\"size\":10,\"items\":[{\"id\":2,\"x\":6,\"y\":0,\"z\":0,\"type\":\"wall\"},{\"id\":3,\"x\":6,\"y\":0,\"z\":1,\"type\":\"wall\"},{\"id\":4,\"x\":6,\"y\":0,\"z\":2,\"type\":\"wall\"},{\"id\":5,\"x\":6,\"y\":0,\"z\":3,\"type\":\"wall\"},{\"id\":6,\"x\":6,\"y\":0,\"z\":4,\"type\":\"wall\"},{\"id\":7,\"x\":6,\"y\":0,\"z\":5,\"type\":\"wall\"},{\"id\":8,\"x\":7,\"y\":0,\"z\":5,\"type\":\"wall\"},{\"id\":9,\"x\":8,\"y\":0,\"z\":5,\"type\":\"wall\"},{\"id\":10,\"x\":7,\"y\":0,\"z\":8,\"type\":\"wall\"},{\"id\":11,\"x\":5,\"y\":0,\"z\":5,\"type\":\"wall\"},{\"id\":12,\"x\":3,\"y\":0,\"z\":5,\"type\":\"wall\"},{\"id\":14,\"x\":1,\"y\":0,\"z\":5,\"type\":\"wall\"},{\"id\":15,\"x\":0,\"y\":0,\"z\":5,\"type\":\"wall\"},{\"id\":16,\"x\":4,\"y\":0,\"z\":8,\"type\":\"wall\"},{\"id\":17,\"x\":1,\"y\":0,\"z\":8,\"type\":\"wall\"},{\"id\":25,\"x\":7,\"y\":0,\"z\":4,\"type\":\"light\"},{\"id\":26,\"x\":8,\"y\":0,\"z\":2,\"type\":\"wall\"},{\"id\":27,\"x\":1,\"y\":0,\"z\":1,\"type\":\"enemy\"},{\"id\":28,\"x\":1,\"y\":0,\"z\":3,\"type\":\"enemy\"},{\"id\":29,\"x\":4,\"y\":0,\"z\":1,\"type\":\"enemy\"},{\"id\":30,\"x\":4,\"y\":0,\"z\":3,\"type\":\"enemy\"},{\"id\":31,\"x\":2,\"y\":0,\"z\":2,\"type\":\"treasure\"},{\"id\":32,\"x\":3,\"y\":0,\"z\":2,\"type\":\"treasure\"},{\"id\":33,\"x\":1,\"y\":0,\"z\":7,\"type\":\"enemy\"},{\"id\":34,\"x\":4,\"y\":0,\"z\":7,\"type\":\"enemy\"},{\"id\":35,\"x\":7,\"y\":0,\"z\":7,\"type\":\"enemy\"},{\"id\":36,\"x\":5,\"y\":0,\"z\":0,\"type\":\"wall\"},{\"id\":37,\"x\":4,\"y\":0,\"z\":0,\"type\":\"wall\"},{\"id\":38,\"x\":3,\"y\":0,\"z\":0,\"type\":\"wall\"},{\"id\":39,\"x\":2,\"y\":0,\"z\":0,\"type\":\"wall\"},{\"id\":40,\"x\":1,\"y\":0,\"z\":0,\"type\":\"wall\"},{\"id\":41,\"x\":0,\"y\":0,\"z\":0,\"type\":\"wall\"},{\"id\":42,\"x\":0,\"y\":0,\"z\":1,\"type\":\"wall\"},{\"id\":43,\"x\":0,\"y\":0,\"z\":2,\"type\":\"wall\"},{\"id\":44,\"x\":0,\"y\":0,\"z\":3,\"type\":\"wall\"},{\"id\":45,\"x\":0,\"y\":0,\"z\":4,\"type\":\"wall\"},{\"id\":61,\"x\":0,\"y\":0,\"z\":9,\"type\":\"light\"},{\"id\":62,\"x\":2,\"y\":0,\"z\":9,\"type\":\"light\"},{\"id\":63,\"x\":3,\"y\":0,\"z\":9,\"type\":\"light\"},{\"id\":64,\"x\":5,\"y\":0,\"z\":9,\"type\":\"light\"},{\"id\":65,\"x\":6,\"y\":0,\"z\":9,\"type\":\"light\"},{\"id\":66,\"x\":8,\"y\":0,\"z\":9,\"type\":\"light\"},{\"id\":67,\"x\":9,\"y\":0,\"z\":9,\"type\":\"light\"},{\"id\":68,\"x\":1,\"y\":0,\"z\":4,\"type\":\"light\"},{\"id\":69,\"x\":5,\"y\":0,\"z\":4,\"type\":\"light\"}]}';\r\n\r\n\r\nclass LevelLoader {\r\n    constructor(scene) {\r\n        this.levelRenderer = new _LevelRenderer_js__WEBPACK_IMPORTED_MODULE_0__.default(scene);\r\n    }\r\n\r\n    async load() {\r\n        const res = await fetch(\"/editor/load\");\r\n        if (!res.ok) {\r\n            return false;\r\n        }\r\n        const data = await res.json() || {size: 10, items: []};\r\n        // const data = JSON.parse(TEST_RAW_LEVEL);\r\n        console.log(\"loading level: \", data);\r\n        await this.levelRenderer.render(data);\r\n        return true;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/LevelLoader.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/LevelRenderer.js":
+/*!****************************************************!*\
+  !*** ./src/game/components/level/LevelRenderer.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LevelRenderer)\n/* harmony export */ });\n/* harmony import */ var _items_Floor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items/Floor.js */ \"./src/game/components/level/items/Floor.js\");\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants.js */ \"./src/game/components/level/constants.js\");\n\r\n\r\n\r\nclass LevelRenderer {\r\n    constructor(scene) {\r\n        this.items = [];\r\n        this.size = 0;\r\n        this.scene = scene;\r\n    }\r\n\r\n    async render(data) {\r\n        this.size = data.size;\r\n        // renders level items\r\n        data.items.forEach((item) => {\r\n            this.createItem(item);\r\n        });\r\n        // make level floor\r\n        this.loadFloor();\r\n    }\r\n\r\n    createItem(itemData) {\r\n        console.log(itemData.type);\r\n        let itemClass = _constants_js__WEBPACK_IMPORTED_MODULE_1__.ITEMS_MAP[itemData.type];\r\n        if (!itemClass) return false;\r\n        // make item\r\n        let item = new itemClass(this.scene);\r\n        this.items.push(item);\r\n        // set proper position to item\r\n        const itemContainer = item.getContainer()\r\n        itemContainer.position.y = _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE / 2;\r\n        itemContainer.position.x = _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE * itemData.x + _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE / 2;\r\n        itemContainer.position.z = _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE * itemData.z + _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE / 2;\r\n    }\r\n\r\n    loadFloor() {\r\n        const floorSize = _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE * this.size;\r\n        this.floor = new _items_Floor_js__WEBPACK_IMPORTED_MODULE_0__.default(this.scene, floorSize);\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/LevelRenderer.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/constants.js":
+/*!************************************************!*\
+  !*** ./src/game/components/level/constants.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"CELL_SIZE\": () => (/* binding */ CELL_SIZE),\n/* harmony export */   \"ITEMS_MAP\": () => (/* binding */ ITEMS_MAP)\n/* harmony export */ });\n/* harmony import */ var _items_Wall_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items/Wall.js */ \"./src/game/components/level/items/Wall.js\");\n/* harmony import */ var _items_Light_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./items/Light.js */ \"./src/game/components/level/items/Light.js\");\n/* harmony import */ var _items_Treasure_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./items/Treasure.js */ \"./src/game/components/level/items/Treasure.js\");\n/* harmony import */ var _items_Enemy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./items/Enemy.js */ \"./src/game/components/level/items/Enemy.js\");\n\r\n\r\n\r\n\r\n\r\nconst CELL_SIZE = 100;\r\nconst ITEMS_MAP = {\r\n    wall: _items_Wall_js__WEBPACK_IMPORTED_MODULE_0__.default,\r\n    light: _items_Light_js__WEBPACK_IMPORTED_MODULE_1__.default,\r\n    treasure: _items_Treasure_js__WEBPACK_IMPORTED_MODULE_2__.default,\r\n    enemy: _items_Enemy_js__WEBPACK_IMPORTED_MODULE_3__.default,\r\n};\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/constants.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/Enemy.js":
+/*!**************************************************!*\
+  !*** ./src/game/components/level/items/Enemy.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Enemy)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants.js */ \"./src/game/components/level/constants.js\");\n\r\n\r\n\r\nclass Enemy {\r\n    constructor(scene) {\r\n        this.scene = scene;\r\n        this.size = _constants_js__WEBPACK_IMPORTED_MODULE_0__.CELL_SIZE / 10;\r\n\r\n        this.geometry = new three__WEBPACK_IMPORTED_MODULE_1__.BoxGeometry(this.size, this.size, this.size);\r\n        this.material = new three__WEBPACK_IMPORTED_MODULE_1__.MeshPhongMaterial({\r\n            specular: 0xffcccc,\r\n            color: 0xff8888,\r\n            shininess: 50,\r\n            side: three__WEBPACK_IMPORTED_MODULE_1__.DoubleSide,\r\n            wireframe: true,\r\n        });\r\n\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_1__.Mesh(this.geometry, this.material);\r\n        this.scene.add(this.mesh);\r\n    }\r\n\r\n    getContainer() {\r\n        return this.mesh;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/Enemy.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/Floor.js":
+/*!**************************************************!*\
+  !*** ./src/game/components/level/items/Floor.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Floor)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _gfx_materials_rocks_hexagons_base_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../gfx/materials/rocks_hexagons_base.jpg */ \"./src/game/gfx/materials/rocks_hexagons_base.jpg\");\n\r\n\r\n\r\nconst TEXTURE = _gfx_materials_rocks_hexagons_base_jpg__WEBPACK_IMPORTED_MODULE_0__.default;\r\n\r\nclass Floor {\r\n    constructor(scene, size, margins=true) {\r\n        this.scene = scene;\r\n        this.size = margins ? size * 1.5 : size;\r\n\r\n        this.geometry = new three__WEBPACK_IMPORTED_MODULE_1__.PlaneGeometry(this.size, this.size, 10, 10);\r\n        this.material = new three__WEBPACK_IMPORTED_MODULE_1__.MeshPhongMaterial({\r\n            shininess: 50,\r\n            side: three__WEBPACK_IMPORTED_MODULE_1__.DoubleSide,\r\n            map: new three__WEBPACK_IMPORTED_MODULE_1__.TextureLoader().load(TEXTURE),\r\n        });\r\n        this.geometry.rotateX(Math.PI / 2);\r\n\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_1__.Mesh(this.geometry, this.material);\r\n        this.mesh.position.x = this.size / 2;\r\n        this.mesh.position.z = this.size / 2;\r\n        // center floor with margins\r\n        if (margins){\r\n            this.mesh.position.x /= 1.5;\r\n            this.mesh.position.z /= 1.5;\r\n        }\r\n        this.scene.add(this.mesh);\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/Floor.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/Light.js":
+/*!**************************************************!*\
+  !*** ./src/game/components/level/items/Light.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Light)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nclass Light {\r\n    constructor(scene, castShadow = false) {\r\n        this.scene = scene;\r\n        this.container = new three__WEBPACK_IMPORTED_MODULE_0__.Object3D();\r\n        this.castShadow = castShadow;\r\n\r\n        this.init();\r\n        this.scene.add(this.container);\r\n    }\r\n\r\n    init() {\r\n        this.light = new three__WEBPACK_IMPORTED_MODULE_0__.PointLight(0xfdffff, 0.2, 0, 2);\r\n        this.light.castShadow = this.castShadow;\r\n        this.light.position.set(0, 0, 0); // pos in container\r\n\r\n        this.container.add(this.light);\r\n\r\n        let geometry = new three__WEBPACK_IMPORTED_MODULE_0__.SphereGeometry(5, 3, 3);\r\n        var material = new three__WEBPACK_IMPORTED_MODULE_0__.MeshBasicMaterial({\r\n            color: 0xffff88,\r\n            side: three__WEBPACK_IMPORTED_MODULE_0__.DoubleSide,\r\n            wireframe: true,\r\n        });\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_0__.Mesh(geometry, material);\r\n\r\n        this.container.add(this.mesh);\r\n    }\r\n\r\n    getContainer() {\r\n        return this.container;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/Light.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/Treasure.js":
+/*!*****************************************************!*\
+  !*** ./src/game/components/level/items/Treasure.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Treasure)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants.js */ \"./src/game/components/level/constants.js\");\n\r\n\r\n\r\nclass Treasure {\r\n    constructor(scene) {\r\n        this.scene = scene;\r\n        this.size = _constants_js__WEBPACK_IMPORTED_MODULE_0__.CELL_SIZE / 10;\r\n\r\n        this.geometry = new three__WEBPACK_IMPORTED_MODULE_1__.BoxGeometry(this.size, this.size, this.size);\r\n        this.material = new three__WEBPACK_IMPORTED_MODULE_1__.MeshPhongMaterial({\r\n            specular: 0xccccff,\r\n            color: 0x8888ff,\r\n            shininess: 50,\r\n            side: three__WEBPACK_IMPORTED_MODULE_1__.DoubleSide,\r\n            wireframe: true,\r\n        });\r\n\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_1__.Mesh(this.geometry, this.material);\r\n        this.scene.add(this.mesh);\r\n    }\r\n\r\n    getContainer() {\r\n        return this.mesh;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/Treasure.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/Wall.js":
+/*!*************************************************!*\
+  !*** ./src/game/components/level/items/Wall.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Wall)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _gfx_materials_wall_base_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../gfx/materials/wall_base.jpg */ \"./src/game/gfx/materials/wall_base.jpg\");\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/game/components/level/constants.js\");\n\r\n\r\n\r\n\r\nconst TEXTURE = _gfx_materials_wall_base_jpg__WEBPACK_IMPORTED_MODULE_0__.default;\r\n\r\nclass Wall {\r\n    constructor(scene) {\r\n        this.scene = scene;\r\n        this.size = _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE;\r\n\r\n        this.geometry = new three__WEBPACK_IMPORTED_MODULE_2__.BoxGeometry(this.size, this.size, this.size);\r\n        this.material = new three__WEBPACK_IMPORTED_MODULE_2__.MeshPhongMaterial({\r\n            shininess: 50,\r\n            side: three__WEBPACK_IMPORTED_MODULE_2__.DoubleSide,\r\n            map: new three__WEBPACK_IMPORTED_MODULE_2__.TextureLoader().load(TEXTURE),\r\n        });\r\n\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_2__.Mesh(this.geometry, this.material);\r\n        this.scene.add(this.mesh);\r\n    }\r\n\r\n    getContainer() {\r\n        return this.mesh;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/Wall.js?");
 
 /***/ }),
 
@@ -180,6 +323,18 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! jQuery
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -194,6 +349,26 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! jQuery
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl + "../";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
