@@ -1,33 +1,41 @@
 import {
-    BoxGeometry,
-    MeshPhongMaterial,
-    DoubleSide,
-    Mesh,
+    LoadingManager
 } from "three";
 import { CELL_SIZE } from "../constants.js";
 import LevelItem from "./LevelItem.js";
+import Model from "../../models/Model.js";
+import Animation from "../../models/Animation.js";
+import md2model from "../../assets/atst/model.md2";
+import texture from "../../assets/atst/texture.png";
 
 export default class Enemy extends LevelItem {
-    constructor(scene) {
+    constructor(scene, subscriberToRender) {
         super();
         this.scene = scene;
         this.size = CELL_SIZE / 10;
 
-        this.geometry = new BoxGeometry(this.size, this.size, this.size);
-        this.material = new MeshPhongMaterial({
-            specular: 0xffcccc,
-            color: 0xff8888,
-            shininess: 50,
-            side: DoubleSide,
-            wireframe: true,
-        });
+        this.subscriberToRender = subscriberToRender;
 
-        this.mesh = new Mesh(this.geometry, this.material);
-        this.mesh.castShadow = true;
-        this.scene.add(this.mesh);
+        this.manager = new LoadingManager();
+        this.model = new Model(this.scene, this.manager, texture);
+        
+        this.animation = null;
     }
 
     getContainer() {
-        return this.mesh;
+        return this.model.mesh;
+    }
+
+    load(){
+        return new Promise((resolve) => {
+            this.manager.onLoad = () => {
+                this.animation = new Animation(this.model.mesh);
+                this.animation.playAnim("stand")
+                this.subscriberToRender((delta) => {this.animation.update(delta)})
+                resolve(true)
+            }
+    
+            this.model.load(md2model);
+        })
     }
 }

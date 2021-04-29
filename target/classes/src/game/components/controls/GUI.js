@@ -1,4 +1,4 @@
-import $ from "../../libs/jquery-3.6.0.min.js";
+import $ from "../../../libs/jquery-3.6.0.min.js";
 
 export default class GUI {
     constructor(camera, levelRenderer) {

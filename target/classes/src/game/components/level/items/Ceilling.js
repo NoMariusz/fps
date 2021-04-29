@@ -11,7 +11,7 @@ import { CELL_SIZE } from "../constants.js";
 
 const TEXTURE = image;
 
-export default class Celling {
+export default class Ceilling {
     constructor(scene, size, margins = true) {
         this.scene = scene;
         this.size = margins ? size * 1.5 : size;

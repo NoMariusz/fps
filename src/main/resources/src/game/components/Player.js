@@ -1,10 +1,16 @@
-import { ConeGeometry, MeshPhongMaterial, DoubleSide, Mesh } from "three";
+import { LoadingManager } from "three";
 import { CELL_SIZE } from "./level/constants.js";
+import Model from "./models/Model.js";
+import Animation from "./models/Animation.js";
+import vaderMD2 from "./assets/vader/model.md2";
+import texture from "./assets/vader/texture.png";
 
-export default class Enemy {
-    constructor(scene, levelSize) {
+export default class Player {
+    constructor(scene, levelSize, onLoadCallback, subscriberToRender) {
         this.scene = scene;
         this.size = CELL_SIZE / 10;
+
+        this.subscriberToRender = subscriberToRender;
 
         this.levelSize = levelSize;
         this.startPos = [
@@ -13,21 +19,28 @@ export default class Enemy {
             CELL_SIZE * (this.levelSize - 1),
         ];
 
-        this.geometry = new ConeGeometry(this.size, this.size, this.size);
-        this.material = new MeshPhongMaterial({
-            specular: 0xccffcc,
-            color: 0x88ff88,
-            shininess: 50,
-            side: DoubleSide,
-            wireframe: true,
-        });
+        this.manager = new LoadingManager();
 
-        this.mesh = new Mesh(this.geometry, this.material);
-        this.mesh.position.set(...this.startPos);
-        this.scene.add(this.mesh);
+        this.model = new Model(this.scene, this.manager, texture);
+        
+        this.animation = null;
+
+        this.manager.onLoad = () => {
+            this.model.mesh.position.set(...this.startPos);
+            onLoadCallback();
+            this.animation = new Animation(this.model.mesh);
+            this.animation.playAnim("Stand")
+            this.subscriberToRender((delta) => {this.animation.update(delta)})
+        }
+
+        this.model.load(vaderMD2);
     }
 
     getContainer() {
-        return this.mesh;
+        return this.model.mesh;
+    }
+
+    update(){
+        this.model?.update();
     }
 }

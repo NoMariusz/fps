@@ -3,13 +3,13 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        "home": "./src/home/app.js",
-        "editor": "./src/editor/app.js",
-        "game": "./src/game/app.js",
+        home: "./src/home/app.js",
+        editor: "./src/editor/app.js",
+        game: "./src/game/app.js",
     },
     output: {
         filename: "[name]/bundle.js",
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, "public"),
     },
     mode: "development", // none, development, production
 
@@ -20,21 +20,21 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            chunks: ['home'],
-            template: './src/home/index.html',
-            filename: './home/index.html'
+            chunks: ["home"],
+            template: "./src/home/index.html",
+            filename: "./home/index.html",
         }),
         new HtmlWebpackPlugin({
             hash: true,
-            chunks: ['editor'],
-            template: './src/editor/index.html',
-            filename: './editor/index.html'
+            chunks: ["editor"],
+            template: "./src/editor/index.html",
+            filename: "./editor/index.html",
         }),
         new HtmlWebpackPlugin({
             hash: true,
-            chunks: ['game'],
-            template: './src/game/index.html',
-            filename: './game/index.html'
+            chunks: ["game"],
+            template: "./src/game/index.html",
+            filename: "./game/index.html",
         }),
     ],
 
@@ -42,18 +42,24 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(png|jp(e*)g|svg)$/,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8000, // Convert images < 8kb to base64 strings
-                        name: 'images/[hash]-[name].[ext]'
-                    }
-                }]
-            }
-        ]
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            limit: 8000, // Convert images < 8kb to base64 strings
+                            name: "images/[hash]-[name].[ext]",
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(md2)$/i,
+                type: "asset/resource",
+            },
+        ],
     },
 };

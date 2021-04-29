@@ -3,11 +3,12 @@ import { CELL_SIZE, ITEMS_MAP } from "./constants.js";
 import Ceilling from "./items/Ceilling.js";
 
 export default class LevelRenderer {
-    constructor(scene, renderer) {
+    constructor(scene, renderer, subscriberToRender) {
         this.items = [];
         this.size = 0;
         this.scene = scene;
         this.renderer = renderer;
+        this.subscriberToRender = subscriberToRender;
     }
 
     //rendering level stuff
@@ -15,23 +16,24 @@ export default class LevelRenderer {
     async render(data) {
         this.size = data.size;
         // renders level items
-        data.items.forEach((item) => {
-            this.createItem(item);
-        });
+        for (const item of data.items){
+            await this.createItem(item);
+        }
         // make level floor and celling
         this.loadFloor();
         this.loadCeilling();
     }
 
-    createItem(itemData) {
+    async createItem(itemData) {
         let itemClass = ITEMS_MAP[itemData.type];
         if (!itemClass) return false;
         // make item
-        let item = new itemClass(this.scene);
+        let item = new itemClass(this.scene, this.subscriberToRender);
         this.items.push(item);
         // set type to intem do identify them later
         item.type = itemData.type;
-        // set proper position to item
+        await item.load();
+        // set proper position to item, after loading
         const itemContainer = item.getContainer();
         itemContainer.position.y = CELL_SIZE / 2;
         itemContainer.position.x = CELL_SIZE * itemData.x + CELL_SIZE / 2;
@@ -69,10 +71,12 @@ export default class LevelRenderer {
     }
 
     hideCeilling() {
-        this.ceilling.mesh.visible = false;
+        console.log("hide celling");
+        this.ceilling.getContainer().visible = false;
     }
 
     showCeilling() {
-        this.ceilling.mesh.visible = true;
+        console.log("show celling");
+        this.ceilling.getContainer().visible = true;
     }
 }

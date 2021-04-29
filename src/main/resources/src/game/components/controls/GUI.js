@@ -1,4 +1,4 @@
-import $ from "../../libs/jquery-3.6.0.min.js";
+import $ from "../../../libs/jquery-3.6.0.min.js";
 
 export default class GUI {
     constructor(camera, levelRenderer) {
@@ -106,10 +106,10 @@ export default class GUI {
         this.makeGuiCheckControl("view from above", (e) => {
             if (e.target.checked) {
                 this.camera.aboveView();
-                this.levelRenderer.hideCelling();
+                this.levelRenderer.hideCeilling();
             } else {
                 this.camera.normalView();
-                this.levelRenderer.showCelling();
+                this.levelRenderer.showCeilling();
             }
         });
     }
