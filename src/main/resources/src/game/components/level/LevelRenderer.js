@@ -71,12 +71,10 @@ export default class LevelRenderer {
     }
 
     hideCeilling() {
-        console.log("hide celling");
         this.ceilling.getContainer().visible = false;
     }
 
     showCeilling() {
-        console.log("show celling");
         this.ceilling.getContainer().visible = true;
     }
 }

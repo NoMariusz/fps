@@ -27,10 +27,10 @@ export default class Player {
 
         this.manager.onLoad = () => {
             this.model.mesh.position.set(...this.startPos);
-            onLoadCallback();
             this.animation = new Animation(this.model.mesh);
             this.animation.playAnim("Stand")
             this.subscriberToRender((delta) => {this.animation.update(delta)})
+            onLoadCallback();
         }
 
         this.model.load(vaderMD2);

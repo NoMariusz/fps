@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from "three";
+import { PerspectiveCamera, Vector3 } from "three";
 import { CELL_SIZE } from "./level/constants.js";
 
 export default class Camera {
@@ -8,6 +8,9 @@ export default class Camera {
         this.root = root;
 
         this.levelBoardSize = levelSize * CELL_SIZE;
+
+        this.camVect = new Vector3(-200, 50, 0);
+        this.targetOffset = new Vector3(0, 0, 0);
 
         this.threeCamera = new PerspectiveCamera(
             75,
@@ -67,7 +70,7 @@ export default class Camera {
         const rootPos = this.root.getContainer().position;
         this.threeCamera.position.x = rootPos.x;
         this.threeCamera.position.z = rootPos.z + 45;
-        this.lookAtPlayer();
+        this.dependOnPlayer();
     }
 
     // public camera modifiers
@@ -76,29 +79,24 @@ export default class Camera {
         if (this.isAboveView){
             return false;
         }
-        this.threeCamera.position.y = y;
-        this.lookAtPlayer();
+        this.camVect.y = y;
+        this.dependOnPlayer();
     }
 
     changeXAngle(angle) {
-        this.threeCamera.rotation.x = angle;
-    }
-
-    changeYAngle(angle) {
-        this.threeCamera.rotation.y = angle;
+        this.targetOffset.y = angle;
     }
 
     changeRootDistance(distance) {
         if (this.isAboveView){
             return false;
         }
-        const rootPos = this.root.getContainer().position;
-        this.threeCamera.position.z = rootPos.z + distance;
-        this.lookAtPlayer();
+        this.camVect.x = distance;
+        this.dependOnPlayer();
     }
 
     changeYAngle(angle) {
-        this.threeCamera.rotation.y = angle;
+        this.targetOffset.z = angle;
     }
 
     changeFov(fov) {
@@ -108,7 +106,22 @@ export default class Camera {
 
     // utils
 
-    lookAtPlayer() {
-        this.threeCamera.lookAt(this.root.getContainer().position);
+    dependOnPlayer() {
+        // make temp vector with value of main camera vector
+        const tempCamVect = new Vector3(0, 0, 0);
+        tempCamVect.copy(this.camVect);
+        
+        const camPos = tempCamVect.applyMatrix4(this.root.getContainer().matrixWorld);
+        this.threeCamera.position.x = camPos.x;
+        this.threeCamera.position.y = camPos.y;
+        this.threeCamera.position.z = camPos.z;
+        this.threeCamera.lookAt(this.getTargetPos());
+    }
+
+    getTargetPos(){
+        const tempVect = new Vector3(0, 0, 0);
+        tempVect.copy(this.targetOffset);
+
+        return tempVect.applyMatrix4(this.root.getContainer().matrixWorld);
     }
 }

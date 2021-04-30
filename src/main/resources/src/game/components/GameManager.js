@@ -1,15 +1,19 @@
 import { Scene, Clock } from "three";
 import Stats from "three/examples/jsm/libs/stats.module.js";
+
 import Renderer from "./Renderer.js";
 import Camera from "./Camera.js";
 import Player from "./Player.js";
 import LoadingDisplayer from "./LoadingDisplayer.js";
 import HelperAxes from "./HelperAxes.js";
+
 import LevelRenderer from "./level/LevelRenderer.js";
 import LevelLoader from "./level/LevelLoader.js";
-import GUI from "./controls/GUI.js";
 
-export default class Render {
+import GUI from "./controls/GUI.js";
+import MoveManager from "./controls/MoveManager.js";
+
+export default class GameManager {
     constructor(container) {
         this.container = container;
         this.init();
@@ -75,6 +79,12 @@ export default class Render {
         this.stats = new Stats();
         this.stats.showPanel(0);
         document.body.appendChild(this.stats.dom);
+
+        // add moveManager
+        this.moveManager = new MoveManager(this.player, this.camera);
+        this.subscribeToRender(() => {
+            this.moveManager.update();
+        })
 
         this.render();
         this.loadingDisplayer.hideLoading();

@@ -30,9 +30,9 @@ export default class GUI {
             (e) => {
                 this.camera.changeHeight(e.target.value);
             },
-            10,
+            0,
             80,
-            this.camera.getPos().y
+            50
         );
     }
 
@@ -42,8 +42,8 @@ export default class GUI {
             (e) => {
                 this.camera.changeXAngle(e.target.value);
             },
-            -Math.PI / 2,
-            Math.PI / 2,
+            -100,
+            100,
             0
         );
     }
@@ -54,9 +54,9 @@ export default class GUI {
             (e) => {
                 this.camera.changeRootDistance(parseFloat(e.target.value));
             },
-            10,
-            50,
-            45
+            -400,
+            200,
+            -200
         );
     }
 
@@ -66,8 +66,8 @@ export default class GUI {
             (e) => {
                 this.camera.changeYAngle(e.target.value);
             },
-            -Math.PI / 2,
-            Math.PI / 2,
+            -100,
+            100,
             0
         );
     }
