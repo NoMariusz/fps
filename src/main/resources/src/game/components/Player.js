@@ -8,14 +8,13 @@ import texture from "./assets/vader/texture.png";
 export default class Player {
     constructor(scene, levelSize, onLoadCallback, subscriberToRender) {
         this.scene = scene;
-        this.size = CELL_SIZE / 10;
 
         this.subscriberToRender = subscriberToRender;
 
         this.levelSize = levelSize;
         this.startPos = [
             CELL_SIZE * (this.levelSize - 1),
-            this.size,
+            25,
             CELL_SIZE * (this.levelSize - 1),
         ];
 

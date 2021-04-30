@@ -35,7 +35,7 @@ export default class LevelRenderer {
         await item.load();
         // set proper position to item, after loading
         const itemContainer = item.getContainer();
-        itemContainer.position.y = CELL_SIZE / 2;
+        itemContainer.position.y = item.getYOffset();
         itemContainer.position.x = CELL_SIZE * itemData.x + CELL_SIZE / 2;
         itemContainer.position.z = CELL_SIZE * itemData.z + CELL_SIZE / 2;
     }

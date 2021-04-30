@@ -35,7 +35,6 @@ export default class Keyboard {
                 Config.rotateRight = false;
                 break;
         }
-        console.log("onKeyChange", event.keyCode);
     }
 
     onKeyDown(event) {
