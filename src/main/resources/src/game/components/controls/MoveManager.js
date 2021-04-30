@@ -6,6 +6,7 @@ export default class MoveManager{
         this.root = root
         this.camera = camera
         this.keyboard = new Keyboard(window);
+        this.isRootMoving = false;
     }
 
     update(){
@@ -23,6 +24,12 @@ export default class MoveManager{
 
             // set camera depend of pleyr pos
             this.camera.dependOnPlayer();
+
+            // change root status if value changed
+            if (Config.moveForward != this.isRootMoving){
+                this.isRootMoving = Config.moveForward;
+                this.root.updateMovingStatus(this.isRootMoving);
+            }
         }
     }
 }

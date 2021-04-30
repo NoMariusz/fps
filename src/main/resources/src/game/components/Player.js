@@ -22,16 +22,18 @@ export default class Player {
         this.manager = new LoadingManager();
 
         this.model = new Model(this.scene, this.manager, texture);
-        
+
         this.animation = null;
 
         this.manager.onLoad = () => {
             this.model.mesh.position.set(...this.startPos);
             this.animation = new Animation(this.model.mesh);
-            this.animation.playAnim("Stand")
-            this.subscriberToRender((delta) => {this.animation.update(delta)})
+            this.animation.playAnim("Stand");
+            this.subscriberToRender((delta) => {
+                this.animation.update(delta);
+            });
             onLoadCallback();
-        }
+        };
 
         this.model.load(vaderMD2);
     }
@@ -40,7 +42,15 @@ export default class Player {
         return this.model.mesh;
     }
 
-    update(){
+    update() {
         this.model?.update();
+    }
+
+    updateMovingStatus(isMoving) {
+        if (isMoving) {
+            this.animation.playAnim("CrWalk");
+        } else {
+            this.animation.playAnim("Stand");
+        }
     }
 }
