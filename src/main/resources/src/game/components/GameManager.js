@@ -42,6 +42,11 @@ export default class GameManager {
 
         this.clock = new Clock();
 
+        // add fps displayer
+        this.stats = new Stats();
+        this.stats.showPanel(0);
+        document.body.appendChild(this.stats.dom);
+
         this.player = new Player(
             this.scene,
             this.levelSize,
@@ -57,6 +62,9 @@ export default class GameManager {
     render() {
         console.log("Game Manager: render()");
 
+        // start mesurment stats to update fps displyer
+        this.stats.begin();
+
         const delta = this.clock.getDelta();
         this.rendersSubscribers.forEach((callback) => {
             callback(delta);
@@ -64,6 +72,9 @@ export default class GameManager {
 
         this.renderer.render(this.scene, this.camera.threeCamera);
         requestAnimationFrame(this.render.bind(this));
+
+        // end mesurment stats
+        this.stats.end();
     }
 
     atPlayerLoaded() {
@@ -74,11 +85,6 @@ export default class GameManager {
         );
         this.helperAxes = new HelperAxes(this.scene);
         this.gui = new GUI(this.camera, this.levelRenderer);
-
-        // add fps displayer
-        this.stats = new Stats();
-        this.stats.showPanel(0);
-        document.body.appendChild(this.stats.dom);
 
         // add moveManager
         this.moveManager = new MoveManager(this.player, this.camera);
