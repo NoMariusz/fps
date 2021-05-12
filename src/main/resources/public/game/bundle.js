@@ -119,6 +119,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/game/components/assets/particle.png":
+/*!*************************************************!*\
+  !*** ./src/game/components/assets/particle.png ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"images/9f7a1179419675f14a95b358db13c960-particle.png\");\n\n//# sourceURL=webpack://test_webpack/./src/game/components/assets/particle.png?");
+
+/***/ }),
+
 /***/ "./src/game/components/assets/vader/texture.png":
 /*!******************************************************!*\
   !*** ./src/game/components/assets/vader/texture.png ***!
@@ -335,7 +346,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"CELL_SIZE\": () => (/* binding */ CELL_SIZE),\n/* harmony export */   \"ITEMS_MAP\": () => (/* binding */ ITEMS_MAP)\n/* harmony export */ });\n/* harmony import */ var _items_Wall_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items/Wall.js */ \"./src/game/components/level/items/Wall.js\");\n/* harmony import */ var _items_Light_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./items/Light.js */ \"./src/game/components/level/items/Light.js\");\n/* harmony import */ var _items_Treasure_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./items/Treasure.js */ \"./src/game/components/level/items/Treasure.js\");\n/* harmony import */ var _items_Enemy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./items/Enemy.js */ \"./src/game/components/level/items/Enemy.js\");\n\r\n\r\n\r\n\r\n\r\nconst CELL_SIZE = 100;\r\nconst ITEMS_MAP = {\r\n    wall: _items_Wall_js__WEBPACK_IMPORTED_MODULE_0__.default,\r\n    light: _items_Light_js__WEBPACK_IMPORTED_MODULE_1__.default,\r\n    treasure: _items_Treasure_js__WEBPACK_IMPORTED_MODULE_2__.default,\r\n    enemy: _items_Enemy_js__WEBPACK_IMPORTED_MODULE_3__.default,\r\n};\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/constants.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"CELL_SIZE\": () => (/* binding */ CELL_SIZE),\n/* harmony export */   \"ITEMS_MAP\": () => (/* binding */ ITEMS_MAP)\n/* harmony export */ });\n/* harmony import */ var _items_Wall_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items/Wall.js */ \"./src/game/components/level/items/Wall.js\");\n/* harmony import */ var _items_light_Light_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./items/light/Light.js */ \"./src/game/components/level/items/light/Light.js\");\n/* harmony import */ var _items_Treasure_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./items/Treasure.js */ \"./src/game/components/level/items/Treasure.js\");\n/* harmony import */ var _items_Enemy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./items/Enemy.js */ \"./src/game/components/level/items/Enemy.js\");\n\r\n\r\n\r\n\r\n\r\nconst CELL_SIZE = 100;\r\nconst ITEMS_MAP = {\r\n    wall: _items_Wall_js__WEBPACK_IMPORTED_MODULE_0__.default,\r\n    light: _items_light_Light_js__WEBPACK_IMPORTED_MODULE_1__.default,\r\n    treasure: _items_Treasure_js__WEBPACK_IMPORTED_MODULE_2__.default,\r\n    enemy: _items_Enemy_js__WEBPACK_IMPORTED_MODULE_3__.default,\r\n};\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/constants.js?");
 
 /***/ }),
 
@@ -379,18 +390,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LevelItem)\n/* harmony export */ });\nclass LevelItem {\r\n    constructor() {\r\n        this.type = \"default\";\r\n\r\n        this.levelItemToOffset = {\r\n            wall: 50,\r\n            enemy: 30,\r\n            treasure: 10,\r\n            light: 90\r\n        }\r\n    }\r\n\r\n    async load() {\r\n        // function for items to indicite if model is loaded, to enable parent\r\n        // to make operations when model end loading\r\n        return true;\r\n    }\r\n\r\n    getYOffset(){\r\n        return this.levelItemToOffset[this.type]\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/LevelItem.js?");
-
-/***/ }),
-
-/***/ "./src/game/components/level/items/Light.js":
-/*!**************************************************!*\
-  !*** ./src/game/components/level/items/Light.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Light)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _LevelItem_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LevelItem.js */ \"./src/game/components/level/items/LevelItem.js\");\n\r\n\r\n\r\n\r\nclass Light extends _LevelItem_js__WEBPACK_IMPORTED_MODULE_0__.default {\r\n    constructor(scene) {\r\n        super();\r\n        this.scene = scene;\r\n        this.container = new three__WEBPACK_IMPORTED_MODULE_1__.Object3D();\r\n\r\n        this.init();\r\n        this.scene.add(this.container);\r\n    }\r\n\r\n    init() {\r\n        this.light = new three__WEBPACK_IMPORTED_MODULE_1__.PointLight(0xfdffff, 0.2, 0, 2);\r\n        this.light.position.set(0, 0, 0); // pos in container\r\n\r\n        this.container.add(this.light);\r\n\r\n        let geometry = new three__WEBPACK_IMPORTED_MODULE_1__.SphereGeometry(5, 3, 3);\r\n        var material = new three__WEBPACK_IMPORTED_MODULE_1__.MeshBasicMaterial({\r\n            color: 0xffff88,\r\n            side: three__WEBPACK_IMPORTED_MODULE_1__.DoubleSide,\r\n            wireframe: true,\r\n        });\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_1__.Mesh(geometry, material);\r\n\r\n        this.container.add(this.mesh);\r\n    }\r\n\r\n    getContainer() {\r\n        return this.container;\r\n    }\r\n\r\n    changeIntensity(value){\r\n        this.light.intensity = value;\r\n    }\r\n\r\n    changeCastShaddows(value){\r\n        this.light.castShadow = value;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/Light.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LevelItem)\n/* harmony export */ });\nclass LevelItem {\r\n    constructor() {\r\n        this.type = \"default\";\r\n\r\n        this.levelItemToOffset = {\r\n            wall: 50,\r\n            enemy: 30,\r\n            treasure: 10,\r\n            light: 10\r\n        }\r\n    }\r\n\r\n    async load() {\r\n        // function for items to indicite if model is loaded, to enable parent\r\n        // to make operations when model end loading\r\n        return true;\r\n    }\r\n\r\n    getYOffset(){\r\n        return this.levelItemToOffset[this.type]\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/LevelItem.js?");
 
 /***/ }),
 
@@ -413,6 +413,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Wall)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _gfx_materials_concrete_wall_base_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../gfx/materials/concrete_wall_base.jpg */ \"./src/game/gfx/materials/concrete_wall_base.jpg\");\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/game/components/level/constants.js\");\n/* harmony import */ var _LevelItem_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LevelItem.js */ \"./src/game/components/level/items/LevelItem.js\");\n\r\n\r\n\r\n\r\n\r\nconst TEXTURE = _gfx_materials_concrete_wall_base_jpg__WEBPACK_IMPORTED_MODULE_0__.default;\r\n\r\nclass Wall extends _LevelItem_js__WEBPACK_IMPORTED_MODULE_2__.default {\r\n    constructor(scene) {\r\n        super();\r\n        this.scene = scene;\r\n        this.size = _constants_js__WEBPACK_IMPORTED_MODULE_1__.CELL_SIZE;\r\n\r\n        this.geometry = new three__WEBPACK_IMPORTED_MODULE_3__.BoxGeometry(this.size, this.size, this.size);\r\n        this.material = new three__WEBPACK_IMPORTED_MODULE_3__.MeshPhongMaterial({\r\n            shininess: 50,\r\n            side: three__WEBPACK_IMPORTED_MODULE_3__.DoubleSide,\r\n            map: new three__WEBPACK_IMPORTED_MODULE_3__.TextureLoader().load(TEXTURE),\r\n        });\r\n\r\n        this.mesh = new three__WEBPACK_IMPORTED_MODULE_3__.Mesh(this.geometry, this.material);\r\n        this.mesh.castShadow = true;\r\n        this.scene.add(this.mesh);\r\n    }\r\n\r\n    getContainer() {\r\n        return this.mesh;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/Wall.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/light/Fireplace.js":
+/*!************************************************************!*\
+  !*** ./src/game/components/level/items/light/Fireplace.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Fireplace)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _assets_particle_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../assets/particle.png */ \"./src/game/components/assets/particle.png\");\n/* harmony import */ var _Particle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Particle.js */ \"./src/game/components/level/items/light/Particle.js\");\n\r\n\r\n\r\n\r\nclass Fireplace extends three__WEBPACK_IMPORTED_MODULE_2__.Object3D {\r\n    constructor() {\r\n        super();\r\n\r\n        this.particles = [];\r\n        // particles count\r\n        this.count = 100;\r\n        // particle material with blending to blend particles\r\n        this.particleMaterial = new three__WEBPACK_IMPORTED_MODULE_2__.SpriteMaterial({\r\n            color: 0xff6000,\r\n            map: new three__WEBPACK_IMPORTED_MODULE_2__.TextureLoader().load(_assets_particle_png__WEBPACK_IMPORTED_MODULE_0__.default),\r\n            transparent: true,\r\n            opacity: 0.8,\r\n            depthWrite: false,\r\n            blending: three__WEBPACK_IMPORTED_MODULE_2__.AdditiveBlending,\r\n        });\r\n\r\n        this.init();\r\n    }\r\n\r\n    init() {\r\n        // in loop make proper count of particles\r\n        while (this.particles.length < this.count) {\r\n            var particle = new _Particle_js__WEBPACK_IMPORTED_MODULE_1__.default(this.particleMaterial);\r\n            this.add(particle);\r\n            this.particles.push(particle);\r\n        }\r\n    }\r\n\r\n    update() {\r\n        // update particles\r\n        this.particles.forEach((particle) => {\r\n            particle.update();\r\n        });\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/light/Fireplace.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/light/Light.js":
+/*!********************************************************!*\
+  !*** ./src/game/components/level/items/light/Light.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Light)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var _LevelItem_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../LevelItem.js */ \"./src/game/components/level/items/LevelItem.js\");\n/* harmony import */ var _Fireplace_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Fireplace.js */ \"./src/game/components/level/items/light/Fireplace.js\");\n\r\n\r\n\r\n\r\n\r\nclass Light extends _LevelItem_js__WEBPACK_IMPORTED_MODULE_0__.default {\r\n    constructor(scene, subscriberToRender) {\r\n        super();\r\n        this.scene = scene;\r\n        this.container = new three__WEBPACK_IMPORTED_MODULE_2__.Object3D();\r\n\r\n        this.subscriberToRender = subscriberToRender;\r\n\r\n        this.init();\r\n        this.scene.add(this.container);\r\n    }\r\n\r\n    init() {\r\n        // init light\r\n        this.light = new three__WEBPACK_IMPORTED_MODULE_2__.PointLight(0xcf4f30, 0.2, 0, 2);\r\n        this.light.position.set(0, 0, 0); // pos in container\r\n\r\n        this.container.add(this.light);\r\n\r\n        // init fire particles\r\n        this.fire = new _Fireplace_js__WEBPACK_IMPORTED_MODULE_1__.default();\r\n        this.fire.position.set(0,0,0)\r\n\r\n        this.container.add(this.fire);\r\n\r\n        this.subscriberToRender(() => {\r\n            this.fire.update();\r\n        });\r\n    }\r\n\r\n    getContainer() {\r\n        return this.container;\r\n    }\r\n\r\n    changeIntensity(value) {\r\n        this.light.intensity = value;\r\n    }\r\n\r\n    changeCastShaddows(value) {\r\n        this.light.castShadow = value;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/light/Light.js?");
+
+/***/ }),
+
+/***/ "./src/game/components/level/items/light/Particle.js":
+/*!***********************************************************!*\
+  !*** ./src/game/components/level/items/light/Particle.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Particle)\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nclass Particle extends three__WEBPACK_IMPORTED_MODULE_0__.Sprite {\r\n    constructor(material) {\r\n        super();\r\n\r\n        this.material = material.clone();\r\n        // sprite scale\r\n        this.scale.set(Math.random() * 50, Math.random() * 100, Math.random() * 50);\r\n    }\r\n\r\n    update() {\r\n        // particle movement, to imitate fire\r\n        if (this.position.y > 0.3) {\r\n            this.position.x = Math.random() * 10;\r\n            this.position.z = Math.random() * 10;\r\n            this.position.y = 0;\r\n            this.material.opacity = 1;\r\n        }\r\n\r\n        this.material.opacity -= 0.1;\r\n        this.position.y += Math.random() * 0.1;\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://test_webpack/./src/game/components/level/items/light/Particle.js?");
 
 /***/ }),
 

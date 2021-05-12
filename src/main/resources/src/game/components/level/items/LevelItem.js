@@ -6,7 +6,7 @@ export default class LevelItem {
             wall: 50,
             enemy: 30,
             treasure: 10,
-            light: 90
+            light: 10
         }
     }
 
