@@ -77,4 +77,28 @@ export default class LevelRenderer {
     showCeilling() {
         this.ceilling.getContainer().visible = true;
     }
+
+    changeFireSize(value){
+        this.items.forEach((item) => {
+            if (item.type == "light") {
+                item.scaleFireSize(value);
+            }
+        });
+    }
+
+    changeFireWidthX(value){
+        this.items.forEach((item) => {
+            if (item.type == "light") {
+                item.scaleFireWidthX(value);
+            }
+        });
+    }
+
+    changeFireWidthZ(value){
+        this.items.forEach((item) => {
+            if (item.type == "light") {
+                item.scaleFireWidthZ(value);
+            }
+        });
+    }
 }

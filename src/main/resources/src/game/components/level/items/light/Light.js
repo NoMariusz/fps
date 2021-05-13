@@ -1,7 +1,4 @@
-import {
-    Object3D,
-    PointLight,
-} from "three";
+import { Object3D, PointLight } from "three";
 
 import LevelItem from "../LevelItem.js";
 import Fireplace from "./Fireplace.js";
@@ -27,7 +24,7 @@ export default class Light extends LevelItem {
 
         // init fire particles
         this.fire = new Fireplace();
-        this.fire.position.set(0,0,0)
+        this.fire.position.set(0, 0, 0);
 
         this.container.add(this.fire);
 
@@ -46,5 +43,17 @@ export default class Light extends LevelItem {
 
     changeCastShaddows(value) {
         this.light.castShadow = value;
+    }
+
+    scaleFireSize(value) {
+        this.fire.scaleSize(value);
+    }
+
+    scaleFireWidthX(value) {
+        this.fire.scaleParticlesX(value);
+    }
+
+    scaleFireWidthZ(value) {
+        this.fire.scaleParticlesZ(value);
     }
 }

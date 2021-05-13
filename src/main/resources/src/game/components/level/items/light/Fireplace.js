@@ -42,4 +42,22 @@ export default class Fireplace extends Object3D {
             particle.update();
         });
     }
+
+    scaleSize(value){
+        this.particles.forEach((particle) => {
+            particle.scaleSize(value);
+        });
+    }
+
+    scaleParticlesX(value){
+        this.particles.forEach((particle) => {
+            particle.scaleX(value);
+        });
+    }
+
+    scaleParticlesZ(value){
+        this.particles.forEach((particle) => {
+            particle.scaleZ(value);
+        });
+    }
 }

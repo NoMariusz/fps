@@ -12,16 +12,20 @@ export default class GUI {
 
     initControls() {
         this.initCameraHeight();
-        this.initCameraYAngle();
-        this.initChangeShaddows();
-
-        this.initCameraXAngle();
         this.initchangeFov();
-        this.initAboveView();
-
-        this.initChangeRootDistance();
-        this.initchangeLightIntensity();
         this.initBehindPlayerView();
+        
+        this.initCameraXAngle();
+        this.initchangeLightIntensity();
+        this.initFireHeight();
+        
+        this.initChangeRootDistance();
+        this.initChangeShaddows();
+        this.initFireWidthX();
+        
+        this.initCameraYAngle();
+        this.initAboveView();
+        this.initFireWidthZ();
     }
 
     initCameraHeight() {
@@ -90,8 +94,8 @@ export default class GUI {
             (e) => {
                 this.levelRenderer.changeLightsIntensity(e.target.value);
             },
-            0.05,
-            1.5,
+            0.1,
+            2.5,
             0.2
         );
     }
@@ -122,6 +126,42 @@ export default class GUI {
                 this.camera.middleView();
             }
         });
+    }
+
+    initFireHeight(){
+        this.makeGuiRangeControl(
+            "fire size",
+            (e) => {
+                this.levelRenderer.changeFireSize(e.target.value);
+            },
+            0.7,
+            1.5,
+            1
+        );
+    }
+
+    initFireWidthX(){
+        this.makeGuiRangeControl(
+            "fire width x",
+            (e) => {
+                this.levelRenderer.changeFireWidthX(e.target.value);
+            },
+            1,
+            50,
+            10
+        );
+    }
+
+    initFireWidthZ(){
+        this.makeGuiRangeControl(
+            "fire width z",
+            (e) => {
+                this.levelRenderer.changeFireWidthZ(e.target.value);
+            },
+            1,
+            50,
+            10
+        );
     }
 
     // helpers making gui
