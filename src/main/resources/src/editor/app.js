@@ -2,6 +2,8 @@ import "../style.css";
 import "./style.css";
 import $ from "../libs/jquery-3.6.0.min.js";
 
+import { TEST_RAW_LEVEL } from "../constants.js";
+
 const SIZE = 10;
 const ACTIONS = ["wall", "enemy", "treasure", "light", "clear"];
 const ACTION_TO_COLOR = {
@@ -102,6 +104,7 @@ const loadLevelToBoard = () => {
 const connectActionsButtons = () => {
     // load save buttons
     $("#saveLevelBtn").on("click", saveLevel);
+    $("#saveTestLevelBtn").on("click", saveTestLevel);
     $("#loadLevelBtn").on("click", loadLevel);
     // connect changing element buttons
     ACTIONS.forEach((action) => {
@@ -118,6 +121,17 @@ const saveLevel = async () => {
         body: JSON.stringify(makeLevelObj()),
     };
     console.log("Level ob to save: ", makeLevelObj());
+    const res = await fetch("/editor/add", reqOptions);
+    if (res.ok) {
+        alert("Level saved");
+    }
+};
+
+const saveTestLevel = async () => {
+    const reqOptions = {
+        method: "POST",
+        body: TEST_RAW_LEVEL,
+    };
     const res = await fetch("/editor/add", reqOptions);
     if (res.ok) {
         alert("Level saved");

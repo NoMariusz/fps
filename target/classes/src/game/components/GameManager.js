@@ -1,15 +1,19 @@
 import { Scene, Clock } from "three";
 import Stats from "three/examples/jsm/libs/stats.module.js";
+
 import Renderer from "./Renderer.js";
 import Camera from "./Camera.js";
 import Player from "./Player.js";
 import LoadingDisplayer from "./LoadingDisplayer.js";
 import HelperAxes from "./HelperAxes.js";
+
 import LevelRenderer from "./level/LevelRenderer.js";
 import LevelLoader from "./level/LevelLoader.js";
-import GUI from "./controls/GUI.js";
 
-export default class Render {
+import GUI from "./controls/GUI.js";
+import MoveManager from "./controls/MoveManager.js";
+
+export default class GameManager {
     constructor(container) {
         this.container = container;
         this.init();
@@ -38,6 +42,11 @@ export default class Render {
 
         this.clock = new Clock();
 
+        // add fps displayer
+        this.stats = new Stats();
+        this.stats.showPanel(0);
+        document.body.appendChild(this.stats.dom);
+
         this.player = new Player(
             this.scene,
             this.levelSize,
@@ -53,6 +62,9 @@ export default class Render {
     render() {
         console.log("Game Manager: render()");
 
+        // start mesurment stats to update fps displyer
+        this.stats.begin();
+
         const delta = this.clock.getDelta();
         this.rendersSubscribers.forEach((callback) => {
             callback(delta);
@@ -60,6 +72,9 @@ export default class Render {
 
         this.renderer.render(this.scene, this.camera.threeCamera);
         requestAnimationFrame(this.render.bind(this));
+
+        // end mesurment stats
+        this.stats.end();
     }
 
     atPlayerLoaded() {
@@ -71,10 +86,11 @@ export default class Render {
         this.helperAxes = new HelperAxes(this.scene);
         this.gui = new GUI(this.camera, this.levelRenderer);
 
-        // add fps displayer
-        this.stats = new Stats();
-        this.stats.showPanel(0);
-        document.body.appendChild(this.stats.dom);
+        // add moveManager
+        this.moveManager = new MoveManager(this.player, this.camera);
+        this.subscribeToRender(() => {
+            this.moveManager.update();
+        })
 
         this.render();
         this.loadingDisplayer.hideLoading();

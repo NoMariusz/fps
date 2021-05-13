@@ -1,5 +1,5 @@
 import Wall from "./items/Wall.js";
-import Light from "./items/Light.js";
+import Light from "./items/light/Light.js";
 import Treasure from "./items/Treasure.js";
 import Enemy from "./items/Enemy.js";
 
