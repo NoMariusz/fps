@@ -43,7 +43,7 @@ export default class RaycastHelper {
         const playerVect = new Vector3();
         player.getContainer().getWorldDirection(playerVect);
 
-        playerVect.applyAxisAngle(axis, Math.PI / 4 * 3);
+        playerVect.applyAxisAngle(axis, (Math.PI / 4) * 3);
         return this.getFrontElementDistance(
             player.getContainer().position,
             playerVect

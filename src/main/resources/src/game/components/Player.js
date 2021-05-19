@@ -1,4 +1,4 @@
-import { LoadingManager } from "three";
+import { LoadingManager, Vector3 } from "three";
 import { CELL_SIZE } from "./level/constants.js";
 import Model from "./models/Model.js";
 import Animation from "./models/Animation.js";
@@ -8,7 +8,13 @@ import vaderMD2 from "./assets/vader/model.md2";
 import texture from "./assets/vader/texture.png";
 
 export default class Player {
-    constructor(scene, levelSize, onLoadCallback, subscriberToRender, levelItems) {
+    constructor(
+        scene,
+        levelSize,
+        onLoadCallback,
+        subscriberToRender,
+        levelItems
+    ) {
         this.scene = scene;
 
         this.subscriberToRender = subscriberToRender;
@@ -34,14 +40,20 @@ export default class Player {
 
             this.subscriberToRender((delta) => {
                 this.animation.update(delta);
+                this.update();
             });
             onLoadCallback();
         };
 
         this.model.load(vaderMD2);
 
-        const collideItems = levelItems.filter(e => e.type == "wall").map(e => e.getContainer())
-        this.raycastHelper = new RaycastHelper(collideItems);
+        const collideItems = levelItems
+            .filter((e) => e.type == "wall")
+            .map((e) => e.getContainer());
+        this.collideHelper = new RaycastHelper(collideItems);
+
+        this.enemies = levelItems.filter((e) => e.type == "enemy");
+        this.enemyDistanceHelper = new RaycastHelper([this.model.mesh]);
     }
 
     getContainer() {
@@ -49,8 +61,10 @@ export default class Player {
     }
 
     update() {
-        this.model?.update();
+        this.updateEnemiesStatus();
     }
+
+    // moving
 
     updateMovingStatus(isMoving) {
         if (isMoving) {
@@ -60,21 +74,46 @@ export default class Player {
         }
     }
 
-    moveForward(){
-        let frontElementDistance = this.raycastHelper.getFrontDistanceForPlayer(this);
-        if (frontElementDistance == null || frontElementDistance >= 25){
+    moveForward() {
+        let frontElementDistance =
+            this.collideHelper.getFrontDistanceForPlayer(this);
+        if (frontElementDistance == null || frontElementDistance >= 25) {
             this.model.mesh.translateX(3);
         } else {
             this.model.mesh.translateX(frontElementDistance - 25);
         }
     }
 
-    moveBackward(){
-        let backElementDistance = this.raycastHelper.getBackDistanceForPlayer(this);
-        if (backElementDistance == null || backElementDistance >= 25){
+    moveBackward() {
+        let backElementDistance =
+            this.collideHelper.getBackDistanceForPlayer(this);
+        if (backElementDistance == null || backElementDistance >= 25) {
             this.model.mesh.translateX(-3);
         } else {
             this.model.mesh.translateX(25 - backElementDistance);
         }
+    }
+
+    // detecting enemy
+
+    updateEnemiesStatus() {
+        this.enemies.forEach((enemy) => {
+            const distance = this.getDistanceTo(enemy);
+            if (distance <= 100) {
+                enemy.isAttacking = true;
+                // to enemy look at player
+                enemy.lookAt(this.model.mesh.position)
+            } else {
+                enemy.isAttacking = false;
+            }
+
+            enemy.update();
+        });
+    }
+
+    getDistanceTo(enemy) {
+        return this.model.mesh.position.distanceTo(
+            enemy.getContainer().position
+        );
     }
 }

@@ -1,6 +1,4 @@
-import {
-    LoadingManager
-} from "three";
+import { LoadingManager } from "three";
 import { CELL_SIZE } from "../constants.js";
 import LevelItem from "./LevelItem.js";
 import Model from "../../models/Model.js";
@@ -18,24 +16,49 @@ export default class Enemy extends LevelItem {
 
         this.manager = new LoadingManager();
         this.model = new Model(this.scene, this.manager, texture);
-        
+
         this.animation = null;
+        this.currentAnim = "stand";
+
+        this.isAttacking = false;
     }
 
     getContainer() {
         return this.model.mesh;
     }
 
-    load(){
+    load() {
         return new Promise((resolve) => {
             this.manager.onLoad = () => {
                 this.animation = new Animation(this.model.mesh);
-                this.animation.playAnim("stand")
-                this.subscriberToRender((delta) => {this.animation.update(delta)})
-                resolve(true)
-            }
-    
+                this.runAnim("stand");
+                // console.log(this.model.geometry.animations);
+                this.subscriberToRender((delta) => {
+                    this.animation.update(delta);
+                });
+
+                resolve(true);
+            };
+
             this.model.load(md2model);
-        })
+        });
+    }
+
+    update() {
+        if (this.isAttacking && this.currentAnim == "stand") {
+            this.runAnim("crattack");
+        } else if (!this.isAttacking && this.currentAnim == "crattack") {
+            this.runAnim("stand");
+        }
+    }
+
+    runAnim(name) {
+        this.currentAnim = name;
+        this.animation.playAnim(name);
+    }
+
+    lookAt(vect){
+        this.getContainer().lookAt(vect)
+        this.getContainer().rotateY(- Math.PI/2)
     }
 }
