@@ -19,7 +19,7 @@ export default class MoveManager{
                 this.root.getContainer().rotation.y -= 0.05;
             }
             if (Config.moveForward) {
-                this.root.getContainer().translateX(3);
+                this.root.moveForward();
             }
 
             // set camera depend of pleyr pos

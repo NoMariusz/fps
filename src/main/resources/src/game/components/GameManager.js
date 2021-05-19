@@ -55,7 +55,8 @@ export default class GameManager {
             },
             (fun) => {
                 this.subscribeToRender(fun);
-            }
+            },
+            this.levelRenderer.items
         );
     }
 
