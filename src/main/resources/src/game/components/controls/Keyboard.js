@@ -28,6 +28,9 @@ export default class Keyboard {
             case KEYS.up:
                 Config.moveForward = false;
                 break;
+            case KEYS.down:
+                Config.moveBackward = false;
+                break;
             case KEYS.left:
                 Config.rotateLeft = false;
                 break;
@@ -41,6 +44,9 @@ export default class Keyboard {
         switch (event.keyCode) {
             case KEYS.up:
                 Config.moveForward = true;
+                break;
+            case KEYS.down:
+                Config.moveBackward = true;
                 break;
             case KEYS.left:
                 Config.rotateLeft = true;

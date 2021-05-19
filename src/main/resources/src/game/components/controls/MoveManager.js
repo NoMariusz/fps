@@ -21,13 +21,16 @@ export default class MoveManager{
             if (Config.moveForward) {
                 this.root.moveForward();
             }
+            if (Config.moveBackward) {
+                this.root.moveBackward();
+            }
 
             // set camera depend of pleyr pos
             this.camera.dependOnPlayer();
 
             // change root status if value changed
-            if (Config.moveForward != this.isRootMoving){
-                this.isRootMoving = Config.moveForward;
+            if ((Config.moveBackward || Config.moveForward) != this.isRootMoving){
+                this.isRootMoving = (Config.moveBackward || Config.moveForward);
                 this.root.updateMovingStatus(this.isRootMoving);
             }
         }

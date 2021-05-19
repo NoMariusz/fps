@@ -62,10 +62,19 @@ export default class Player {
 
     moveForward(){
         let frontElementDistance = this.raycastHelper.getFrontDistanceForPlayer(this);
-        if (frontElementDistance == null || frontElementDistance > 25){
+        if (frontElementDistance == null || frontElementDistance >= 25){
             this.model.mesh.translateX(3);
         } else {
             this.model.mesh.translateX(frontElementDistance - 25);
+        }
+    }
+
+    moveBackward(){
+        let backElementDistance = this.raycastHelper.getBackDistanceForPlayer(this);
+        if (backElementDistance == null || backElementDistance >= 25){
+            this.model.mesh.translateX(-3);
+        } else {
+            this.model.mesh.translateX(25 - backElementDistance);
         }
     }
 }

@@ -36,4 +36,17 @@ export default class RaycastHelper {
             playerVect
         );
     }
+
+    getBackDistanceForPlayer(player) {
+        // calc distance between player and element that is closest to him backs
+        const axis = new Vector3(0, 1, 0);
+        const playerVect = new Vector3();
+        player.getContainer().getWorldDirection(playerVect);
+
+        playerVect.applyAxisAngle(axis, Math.PI / 4 * 3);
+        return this.getFrontElementDistance(
+            player.getContainer().position,
+            playerVect
+        );
+    }
 }
