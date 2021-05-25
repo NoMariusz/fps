@@ -61,4 +61,14 @@ export default class Enemy extends LevelItem {
         this.getContainer().lookAt(vect)
         this.getContainer().rotateY(- Math.PI/2)
     }
+
+    startAttacking(playerPos){
+        this.isAttacking = true;
+        // to enemy look at player
+        this.lookAt(playerPos)
+    }
+    
+    stopAttacking(){
+        this.isAttacking = false;
+    }
 }

@@ -53,7 +53,6 @@ export default class Player {
         this.collideHelper = new RaycastHelper(collideItems);
 
         this.enemies = levelItems.filter((e) => e.type == "enemy");
-        this.enemyDistanceHelper = new RaycastHelper([this.model.mesh]);
     }
 
     getContainer() {
@@ -98,13 +97,12 @@ export default class Player {
 
     updateEnemiesStatus() {
         this.enemies.forEach((enemy) => {
-            const distance = this.getDistanceTo(enemy);
+            const distHelper = new RaycastHelper([enemy.getContainer()]);
+            const distance = distHelper.getPlayerEnemyDistance(this, enemy);
             if (distance <= 100) {
-                enemy.isAttacking = true;
-                // to enemy look at player
-                enemy.lookAt(this.model.mesh.position)
+                enemy.startAttacking(this.model.mesh.position)
             } else {
-                enemy.isAttacking = false;
+                enemy.stopAttacking(this.model.mesh.position)
             }
 
             enemy.update();

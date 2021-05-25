@@ -49,4 +49,24 @@ export default class RaycastHelper {
             playerVect
         );
     }
+
+    getPlayerEnemyDistance(player, enemy) {
+        const pPos = player.getContainer().position
+        const dir = this.getPlayerEnemyDir(player, enemy);
+
+        return this.getFrontElementDistance(
+            pPos,
+            dir
+        );
+    }
+
+    getPlayerEnemyDir(player, enemy){
+        const playerPos = new Vector3().copy(player.getContainer().position);
+
+        const enemyToPlayer = new Vector3().copy(enemy.getContainer().position)
+        enemyToPlayer.sub(playerPos);
+        enemyToPlayer.normalize();
+
+        return enemyToPlayer
+    }
 }
