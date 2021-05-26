@@ -3,4 +3,5 @@ export default {
     rotateRight: false,
     moveForward: false,
     moveBackward: false,
+    isAttacking: false,
 }

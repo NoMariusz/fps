@@ -3,7 +3,7 @@ import Stats from "three/examples/jsm/libs/stats.module.js";
 
 import Renderer from "./Renderer.js";
 import Camera from "./Camera.js";
-import Player from "./Player.js";
+import Player from "./player/Player.js";
 import LoadingDisplayer from "./LoadingDisplayer.js";
 import HelperAxes from "./HelperAxes.js";
 
@@ -12,6 +12,7 @@ import LevelLoader from "./level/LevelLoader.js";
 
 import GUI from "./controls/GUI.js";
 import MoveManager from "./controls/MoveManager.js";
+import PlayerAttackManager from "./player/PlayerAttackManager.js";
 
 export default class GameManager {
     constructor(container) {
@@ -91,6 +92,11 @@ export default class GameManager {
         this.moveManager = new MoveManager(this.player, this.camera);
         this.subscribeToRender(() => {
             this.moveManager.update();
+        })
+
+        this.attackManager = new PlayerAttackManager(this.player);
+        this.subscribeToRender(() => {
+            this.attackManager.update();
         })
 
         this.render();

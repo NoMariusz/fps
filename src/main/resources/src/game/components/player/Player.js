@@ -1,11 +1,12 @@
 import { LoadingManager, Vector3 } from "three";
-import { CELL_SIZE } from "./level/constants.js";
-import Model from "./models/Model.js";
-import Animation from "./models/Animation.js";
-import RaycastHelper from "./RaycastHelper.js";
+import { CELL_SIZE } from "../level/constants.js";
+import Model from "../models/Model.js";
+import Animation from "../models/Animation.js";
+import RaycastHelper from "../RaycastHelper.js";
 
-import vaderMD2 from "./assets/vader/model.md2";
-import texture from "./assets/vader/texture.png";
+import vaderMD2 from "../assets/vader/model.md2";
+import texture from "../assets/vader/texture.png";
+import Laser from "./PlayerLaser.js";
 
 export default class Player {
     constructor(
@@ -42,6 +43,9 @@ export default class Player {
                 this.animation.update(delta);
                 this.update();
             });
+
+            this.initLaser();
+
             onLoadCallback();
         };
 
@@ -53,6 +57,14 @@ export default class Player {
         this.collideHelper = new RaycastHelper(collideItems);
 
         this.enemies = levelItems.filter((e) => e.type == "enemy");
+
+        this.actualAnim = "Stand"
+    }
+
+    initLaser(){
+        this.laser = new Laser(new Vector3(0, 0, 0), new Vector3(-200, 0, 0))
+        this.model.mesh.add(this.laser.mesh)
+        this.laser.mesh.visible = false;
     }
 
     getContainer() {
@@ -61,16 +73,23 @@ export default class Player {
 
     update() {
         this.updateEnemiesStatus();
+        this.laser.update();
     }
 
     // moving
 
     updateMovingStatus(isMoving) {
+        this.isMoving = isMoving
         if (isMoving) {
-            this.animation.playAnim("CrWalk");
+            this.playAnim("CrWalk");
         } else {
-            this.animation.playAnim("Stand");
+            this.playAnim("Stand");
         }
+    }
+
+    playAnim(name){
+        this.actualAnim = name
+        this.animation.playAnim(name);
     }
 
     moveForward() {
@@ -113,5 +132,17 @@ export default class Player {
         return this.model.mesh.position.distanceTo(
             enemy.getContainer().position
         );
+    }
+    
+    // player attack
+
+    startAttacking(){
+        this.playAnim("Attack");
+        this.laser.mesh.visible = true;
+    }
+
+    stopAttacking(){
+        this.updateMovingStatus(this.isMoving);
+        this.laser.mesh.visible = false;
     }
 }

@@ -5,6 +5,7 @@ const KEYS = {
     up: 87,
     right: 68,
     down: 83,
+    space: 32,
 };
 
 export default class Keyboard {
@@ -37,6 +38,9 @@ export default class Keyboard {
             case KEYS.right:
                 Config.rotateRight = false;
                 break;
+            case KEYS.space:
+                Config.isAttacking = false;
+                break;
         }
     }
 
@@ -53,6 +57,9 @@ export default class Keyboard {
                 break;
             case KEYS.right:
                 Config.rotateRight = true;
+                break;
+            case KEYS.space:
+                Config.isAttacking = true;
                 break;
         }
     }
