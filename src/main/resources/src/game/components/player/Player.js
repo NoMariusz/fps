@@ -58,12 +58,13 @@ export default class Player {
 
         this.enemies = levelItems.filter((e) => e.type == "enemy");
 
-        this.actualAnim = "Stand"
+        this.actualAnim = "Stand";
+        this.isAttacking = false;
     }
 
-    initLaser(){
-        this.laser = new Laser(new Vector3(0, 0, 0), new Vector3(-200, 0, 0))
-        this.model.mesh.add(this.laser.mesh)
+    initLaser() {
+        this.laser = new Laser(new Vector3(0, 0, 0), new Vector3(-200, 0, 0));
+        this.model.mesh.add(this.laser.mesh);
         this.laser.mesh.visible = false;
     }
 
@@ -79,7 +80,13 @@ export default class Player {
     // moving
 
     updateMovingStatus(isMoving) {
-        this.isMoving = isMoving
+        this.isMoving = isMoving;
+
+        if (this.isAttacking) {
+            this.playAnim("Attack");
+            return;
+        }
+
         if (isMoving) {
             this.playAnim("CrWalk");
         } else {
@@ -87,9 +94,12 @@ export default class Player {
         }
     }
 
-    playAnim(name){
-        this.actualAnim = name
-        this.animation.playAnim(name);
+    playAnim(name) {
+        // to not restart actual anims
+        if (this.actualAnim != name){
+            this.actualAnim = name;
+            this.animation.playAnim(name);
+        }
     }
 
     moveForward() {
@@ -119,9 +129,9 @@ export default class Player {
             const distHelper = new RaycastHelper([enemy.model.mesh]);
             const distance = distHelper.getPlayerEnemyDistance(this, enemy);
             if (distance && distance <= 100) {
-                enemy.startAttacking(this.model.mesh.position)
+                enemy.startAttacking(this.model.mesh.position);
             } else {
-                enemy.stopAttacking(this.model.mesh.position)
+                enemy.stopAttacking(this.model.mesh.position);
             }
 
             enemy.update();
@@ -133,15 +143,17 @@ export default class Player {
             enemy.getContainer().position
         );
     }
-    
+
     // player attack
 
-    startAttacking(){
+    startAttacking() {
+        this.isAttacking = true;
         this.playAnim("Attack");
         this.laser.mesh.visible = true;
     }
 
-    stopAttacking(){
+    stopAttacking() {
+        this.isAttacking = false;
         this.updateMovingStatus(this.isMoving);
         this.laser.mesh.visible = false;
     }
