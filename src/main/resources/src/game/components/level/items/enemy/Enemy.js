@@ -1,10 +1,11 @@
-import { LoadingManager } from "three";
-import { CELL_SIZE } from "../constants.js";
-import LevelItem from "./LevelItem.js";
-import Model from "../../models/Model.js";
-import Animation from "../../models/Animation.js";
-import md2model from "../../assets/atst/model.md2";
-import texture from "../../assets/atst/texture.png";
+import { LoadingManager, Object3D, Vector3 } from "three";
+import { CELL_SIZE } from "../../constants.js";
+import LevelItem from "../LevelItem.js";
+import Model from "Game/models/Model.js";
+import Animation from "Game/models/Animation.js";
+import md2model from "Game/assets/atst/model.md2";
+import texture from "Game/assets/atst/texture.png";
+import Laser from "./EnemyLaser.js";
 
 export default class Enemy extends LevelItem {
     constructor(scene, subscriberToRender) {
@@ -21,12 +22,11 @@ export default class Enemy extends LevelItem {
         this.currentAnim = "stand";
 
         this.isAttacking = false;
+
+        this.container = new Object3D();
     }
 
-    getContainer() {
-        return this.model.mesh;
-    }
-
+    
     load() {
         return new Promise((resolve) => {
             this.manager.onLoad = () => {
@@ -37,11 +37,28 @@ export default class Enemy extends LevelItem {
                     this.animation.update(delta);
                 });
 
+                this.initLaser();
+
+                this.container.add(this.model.mesh);
+                this.scene.add(this.container);
+                
                 resolve(true);
             };
-
+            
             this.model.load(md2model);
         });
+    }
+
+    initLaser(){
+        this.laser = new Laser(new Vector3(0, 0, 0), new Vector3(90, 0, 0))
+        this.container.add(this.laser.mesh)
+        this.laser.mesh.visible = false;
+    }
+
+    // overall
+
+    getContainer() {
+        return this.container
     }
 
     update() {
@@ -50,25 +67,32 @@ export default class Enemy extends LevelItem {
         } else if (!this.isAttacking && this.currentAnim == "crattack") {
             this.runAnim("stand");
         }
+        this.laser.update();
     }
+
+    // anims
 
     runAnim(name) {
         this.currentAnim = name;
         this.animation.playAnim(name);
     }
 
-    lookAt(vect){
-        this.getContainer().lookAt(vect)
-        this.getContainer().rotateY(- Math.PI/2)
-    }
-
+    // attacking
+    
     startAttacking(playerPos){
         this.isAttacking = true;
         // to enemy look at player
         this.lookAt(playerPos)
+        this.laser.mesh.visible = true;
     }
     
     stopAttacking(){
         this.isAttacking = false;
+        this.laser.mesh.visible = false;
+    }
+
+    lookAt(vect){
+        this.getContainer().lookAt(vect)
+        this.getContainer().rotateY(- Math.PI/2)
     }
 }

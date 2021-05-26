@@ -38,11 +38,7 @@ export default class Laser {
     }
 
     generate() {
-        for (let i = 0; i < this.particlesCount * 3; i += 3) {
-            this.verticesArray[i] = (this.stepV.x * i) / 3;
-            this.verticesArray[i + 1] = (this.stepV.y * i) / 3;
-            this.verticesArray[i + 2] = (this.stepV.z * i) / 3;
-        }
+        this.generateVerticlesArray();
 
         // set points to geometry
         this.particlesGeometry.setAttribute(
@@ -55,6 +51,14 @@ export default class Laser {
 
         // make mesh from geometry
         this.mesh = new Points(this.particlesGeometry, this.particleMaterial);
+    }
+
+    generateVerticlesArray(){
+        for (let i = 0; i < this.particlesCount * 3; i += 3) {
+            this.verticesArray[i] = (this.stepV.x * i) / 3;
+            this.verticesArray[i + 1] = (this.stepV.y * i) / 3;
+            this.verticesArray[i + 2] = (this.stepV.z * i) / 3;
+        }
     }
 
     update() {

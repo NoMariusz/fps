@@ -52,18 +52,33 @@ export default class RaycastHelper {
 
     getPlayerEnemyDistance(player, enemy) {
         const pPos = player.getContainer().position
-        const dir = this.getPlayerEnemyDir(player, enemy);
+        // direction targeting to up from enemy pos (to target head of standing enemy)
+        const dir1 = this.getPlayerEnemyDir(player, enemy, 15);
+        // direction to target middel of enemy (to target head of enemy when sit)
+        const dir2 = this.getPlayerEnemyDir(player, enemy, -5);
 
-        return this.getFrontElementDistance(
+        // get and return distance1 if target enemy
+        const distance1 = this.getFrontElementDistance(
             pPos,
-            dir
+            dir1
         );
+        if (distance1){
+            return distance1
+        }
+
+        // if distance 1 is bad, get and return distance 2
+        const distance2 = this.getFrontElementDistance(
+            pPos,
+            dir2
+        );
+        return distance2
     }
 
-    getPlayerEnemyDir(player, enemy){
+    getPlayerEnemyDir(player, enemy, offset){
         const playerPos = new Vector3().copy(player.getContainer().position);
 
         const enemyToPlayer = new Vector3().copy(enemy.getContainer().position)
+        enemyToPlayer.y += offset // to to target in head of enemy
         enemyToPlayer.sub(playerPos);
         enemyToPlayer.normalize();
 

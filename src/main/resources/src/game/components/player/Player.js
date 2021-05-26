@@ -116,9 +116,9 @@ export default class Player {
 
     updateEnemiesStatus() {
         this.enemies.forEach((enemy) => {
-            const distHelper = new RaycastHelper([enemy.getContainer()]);
+            const distHelper = new RaycastHelper([enemy.model.mesh]);
             const distance = distHelper.getPlayerEnemyDistance(this, enemy);
-            if (distance <= 100) {
+            if (distance && distance <= 100) {
                 enemy.startAttacking(this.model.mesh.position)
             } else {
                 enemy.stopAttacking(this.model.mesh.position)
