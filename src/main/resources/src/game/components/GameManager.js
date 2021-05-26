@@ -86,7 +86,7 @@ export default class GameManager {
             this.levelSize
         );
         this.helperAxes = new HelperAxes(this.scene);
-        this.gui = new GUI(this.camera, this.levelRenderer);
+        this.gui = new GUI(this.camera, this.levelRenderer, this.player);
 
         // add moveManager
         this.moveManager = new MoveManager(this.player, this.camera);

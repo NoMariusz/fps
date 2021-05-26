@@ -1,31 +1,38 @@
 import $ from "../../../libs/jquery-3.6.0.min.js";
 
 export default class GUI {
-    constructor(camera, levelRenderer) {
+    constructor(camera, levelRenderer, player) {
         this.camera = camera;
         this.container = $("#guiRoot");
         this.levelRenderer = levelRenderer;
+        this.player = player;
         this.initControls();
     }
 
     // initialize controls
 
     initControls() {
+        this.container = $("#row1");
         this.initCameraHeight();
-        this.initchangeFov();
-        this.initBehindPlayerView();
-        
-        this.initCameraXAngle();
-        this.initchangeLightIntensity();
-        this.initFireHeight();
-        
-        this.initChangeRootDistance();
-        this.initChangeShaddows();
-        this.initFireWidthX();
-        
         this.initCameraYAngle();
-        this.initAboveView();
+        this.initCameraXAngle();
+        this.initChangeRootDistance();
+        this.initchangeFov();
+        
+        this.initchangeLightIntensity();
+
+        this.container = $("#row2");
+        this.initFireHeight();
+        this.initFireWidthX();
         this.initFireWidthZ();
+        this.initChangeShaddows();
+
+        this.initBehindPlayerView();
+        this.initAboveView();
+
+        this.container = $("#row3");
+        this.initLaserDist();
+        this.initLaserSize();
     }
 
     initCameraHeight() {
@@ -161,6 +168,30 @@ export default class GUI {
             1,
             50,
             10
+        );
+    }
+
+    initLaserDist() {
+        this.makeGuiRangeControl(
+            "laser distortion",
+            (e) => {
+                this.player.laser.changeDispersion(e.target.value);
+            },
+            0,
+            5,
+            3
+        );
+    }
+
+    initLaserSize() {
+        this.makeGuiRangeControl(
+            "laser size",
+            (e) => {
+                this.player.laser.changeSize(e.target.value);
+            },
+            1,
+            50,
+            15
         );
     }
 

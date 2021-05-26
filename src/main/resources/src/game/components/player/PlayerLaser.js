@@ -2,6 +2,14 @@ import Laser from "../models/Laser";
 
 export default class PlayerLaser extends Laser {
     constructor(startPos, endPos) {
-        super(startPos, endPos, 50, 3, 0x21dc5d);
+        super(startPos, endPos, 50, 3, 0x21dc5d, 15);
+    }
+
+    changeSize(value) {
+        this.particleMaterial.size = value;
+    }
+
+    changeDispersion(value) {
+        this.dispersion = value;
     }
 }

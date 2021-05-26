@@ -10,7 +10,7 @@ import {
 import fireTex from "../assets/particle.png";
 
 export default class Laser {
-    constructor(startPos, endPos, count, disp, color) {
+    constructor(startPos, endPos, count, disp, color, size) {
         this.startPos = startPos;
         this.endPos = endPos;
 
@@ -27,7 +27,7 @@ export default class Laser {
             color: color,
             depthWrite: false,
             transparent: true,
-            size: 25,
+            size: size,
             map: new TextureLoader().load(fireTex),
             blending: AdditiveBlending,
         });
@@ -64,13 +64,5 @@ export default class Laser {
             positions[i] = this.pointsPos[i] + (Math.random() - 0.5) * this.dispersion;
         };
         this.particlesGeometry.attributes.position.needsUpdate = true;
-    }
-
-    changeSize(value) {
-        this.particleMaterial.size = value;
-    }
-
-    changeDispersion(value) {
-        this.dispersion = value;
     }
 }
