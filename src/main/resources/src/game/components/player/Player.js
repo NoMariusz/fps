@@ -105,7 +105,7 @@ export default class Player {
     moveForward() {
         let frontElementDistance =
             this.collideHelper.getFrontDistanceForPlayer(this);
-        if (frontElementDistance == null || frontElementDistance >= 25) {
+        if (frontElementDistance == null || frontElementDistance > 25) {
             this.model.mesh.translateX(3);
         } else {
             this.model.mesh.translateX(frontElementDistance - 25);
@@ -115,7 +115,7 @@ export default class Player {
     moveBackward() {
         let backElementDistance =
             this.collideHelper.getBackDistanceForPlayer(this);
-        if (backElementDistance == null || backElementDistance >= 25) {
+        if (backElementDistance == null || backElementDistance > 25) {
             this.model.mesh.translateX(-3);
         } else {
             this.model.mesh.translateX(25 - backElementDistance);

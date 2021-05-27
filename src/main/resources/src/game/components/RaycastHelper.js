@@ -1,5 +1,7 @@
 import { Raycaster, Ray, Vector3 } from "three";
 
+const PLAYER_ROTATION_OFFSET = Math.PI / 2
+
 export default class RaycastHelper {
     constructor(elements) {
         this.raycaster = new Raycaster();
@@ -30,7 +32,7 @@ export default class RaycastHelper {
         const playerVect = new Vector3();
         player.getContainer().getWorldDirection(playerVect);
 
-        playerVect.applyAxisAngle(axis, Math.PI / 4);
+        playerVect.applyAxisAngle(axis, PLAYER_ROTATION_OFFSET);
         return this.getFrontElementDistance(
             player.getContainer().position,
             playerVect
@@ -43,7 +45,7 @@ export default class RaycastHelper {
         const playerVect = new Vector3();
         player.getContainer().getWorldDirection(playerVect);
 
-        playerVect.applyAxisAngle(axis, (Math.PI / 4) * 3);
+        playerVect.applyAxisAngle(axis, PLAYER_ROTATION_OFFSET + Math.PI);
         return this.getFrontElementDistance(
             player.getContainer().position,
             playerVect

@@ -63,7 +63,6 @@ export default class Laser {
 
     update() {
         let positions = this.particlesGeometry.attributes.position.array;
-        // console.log(positions);
         for (let i=0; i< positions.length; i++){
             positions[i] = this.pointsPos[i] + (Math.random() - 0.5) * this.dispersion;
         };
