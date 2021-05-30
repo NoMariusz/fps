@@ -176,6 +176,7 @@ export default class GUI {
             "laser distortion",
             (e) => {
                 this.player.laser.changeDispersion(e.target.value);
+                this.levelRenderer.changeLasersDispersion(e.target.value);
             },
             0,
             5,
@@ -188,6 +189,7 @@ export default class GUI {
             "laser size",
             (e) => {
                 this.player.laser.changeSize(e.target.value);
+                this.levelRenderer.changeLasersSize(e.target.value);
             },
             1,
             50,

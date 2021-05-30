@@ -68,4 +68,14 @@ export default class Laser {
         };
         this.particlesGeometry.attributes.position.needsUpdate = true;
     }
+
+    // public modifiers
+
+    changeSize(value) {
+        this.particleMaterial.size = value;
+    }
+
+    changeDispersion(value) {
+        this.dispersion = value;
+    }
 }

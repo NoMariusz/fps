@@ -101,4 +101,20 @@ export default class LevelRenderer {
             }
         });
     }
+
+    changeLasersDispersion(value){
+        this.items.forEach((item) => {
+            if (item.type == "enemy") {
+                item.laser.changeDispersion(value);
+            }
+        });
+    }
+
+    changeLasersSize(value){
+        this.items.forEach((item) => {
+            if (item.type == "enemy") {
+                item.laser.changeSize(value);
+            }
+        });
+    }
 }
