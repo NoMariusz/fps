@@ -6,12 +6,12 @@ export default class LevelLoader {
     }
 
     async load() {
-        const res = await fetch("/editor/load");
-        if (!res.ok) {
-            return false;
-        }
-        const data = (await res.json()) || { size: 10, items: [] };
-        // const data = JSON.parse(TEST_RAW_LEVEL);
+        // const res = await fetch("/editor/load");
+        // if (!res.ok) {
+        //     return false;
+        // }
+        // const data = (await res.json()) || { size: 10, items: [] };
+        const data = JSON.parse(TEST_RAW_LEVEL);
         console.log("loading level: ", data);
         await this.levelRenderer.render(data);
         return true;

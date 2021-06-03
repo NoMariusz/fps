@@ -13,6 +13,7 @@ import LevelLoader from "./level/LevelLoader.js";
 import GUI from "./controls/GUI.js";
 import MoveManager from "./controls/MoveManager.js";
 import PlayerAttackManager from "./player/PlayerAttackManager.js";
+import ScoreManager from "./ScoreManager.js";
 
 export default class GameManager {
     constructor(container) {
@@ -43,6 +44,10 @@ export default class GameManager {
 
         this.clock = new Clock();
 
+        // scoreManager
+        this.scoreManager = new ScoreManager();
+        this.subscribeToRender(() => {this.scoreManager.render()})
+
         // add fps displayer
         this.stats = new Stats();
         this.stats.showPanel(0);
@@ -57,7 +62,8 @@ export default class GameManager {
             (fun) => {
                 this.subscribeToRender(fun);
             },
-            this.levelRenderer.items
+            this.levelRenderer.items,
+            this.scoreManager,
         );
     }
 

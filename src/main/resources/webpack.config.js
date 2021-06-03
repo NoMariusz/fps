@@ -65,6 +65,7 @@ module.exports = {
     resolve: {
         alias: {
           Game: path.resolve(__dirname, 'src/game/components'),
+          Root: path.resolve(__dirname, 'src'),
         },
       },
 };
