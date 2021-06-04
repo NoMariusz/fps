@@ -2,13 +2,10 @@ package server
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
 import server.data.Level
 import server.data.LevelDeserializer
-import server.data.LevelItem
 import spark.Request
 import spark.Response
-import spark.Spark
 import spark.kotlin.*
 
 var actualLevel: Level? = null
@@ -22,6 +19,7 @@ fun main() {
     get("/editor") { handleEditor(response, request)  }
     post("/editor/add") { handleAddLevel(response, request) }
     get("/editor/load") { handleGetLevel(response, request) }
+    post("/game/save-score") { handleSaveScore(response, request) }
 }
 
 // routeFunc
@@ -52,6 +50,13 @@ fun handleAddLevel(response: Response, request: Request): String {
 fun handleGetLevel(response: Response, request: Request): String {
     val jsonLevel = Gson().toJson(actualLevel)
     return sendRes(response, jsonLevel, 200)
+}
+
+fun handleSaveScore(response: Response, request: Request): String {
+    val score = Gson().fromJson(request.body(), Int::class.java)
+    val dbManager = DbManager()
+    dbManager.saveScore(score)
+    return sendRes(response, "success", 200)
 }
 
 // utils

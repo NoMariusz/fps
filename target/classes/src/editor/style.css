@@ -33,25 +33,6 @@
     justify-content: center;
 }
 
-.actionbtn {
-    margin: 0.2rem;
-    padding: 0.5rem;
-    font-size: 1.3rem;
-    border: none;
-    transition: box-shadow 300ms;
-    width: 100%;
-    max-width: 20rem;
-}
-
-.actionbtn:hover {
-    box-shadow: gray 0.1rem 0.2rem 0.5rem;
-}
-
-.mono {
-    color: #dcdcdc;
-    background-color: #121212;
-}
-
 /* jsonDisplayer */
 
 #jsonDisplayer {

@@ -46,7 +46,10 @@ export default class GameManager {
 
         // scoreManager
         this.scoreManager = new ScoreManager();
-        this.subscribeToRender(() => {this.scoreManager.render()})
+        this.subscribeToRender(() => {
+            this.scoreManager.render();
+        });
+        this.scoreManager.prepare();
 
         // add fps displayer
         this.stats = new Stats();
@@ -63,7 +66,7 @@ export default class GameManager {
                 this.subscribeToRender(fun);
             },
             this.levelRenderer.items,
-            this.scoreManager,
+            this.scoreManager
         );
     }
 
@@ -98,12 +101,12 @@ export default class GameManager {
         this.moveManager = new MoveManager(this.player, this.camera);
         this.subscribeToRender(() => {
             this.moveManager.update();
-        })
+        });
 
         this.attackManager = new PlayerAttackManager(this.player);
         this.subscribeToRender(() => {
             this.attackManager.update();
-        })
+        });
 
         this.render();
         this.loadingDisplayer.hideLoading();

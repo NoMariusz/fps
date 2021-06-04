@@ -1,6 +1,6 @@
 import { sleep } from "Root/utils.js";
 
-export default class LevelLoader {
+export default class ScoreManager {
     constructor(renderer) {
         this.score = 0;
         this.levelRenderer = renderer;
@@ -11,6 +11,15 @@ export default class LevelLoader {
         const scoreNode = document.getElementById("scoreText");
         scoreNode.innerText = `Score: ${this.score}`;
     }
+
+    prepare() {
+        const btn = document.getElementById("saveScore");
+        btn.onclick = () => {
+            this.saveScore();
+        };
+    }
+
+    // actions changing score
 
     onPlayerHit() {
         this.score--;
@@ -66,6 +75,20 @@ export default class LevelLoader {
             this.onEnemyHit();
         } else {
             this.onPlayerHit();
+        }
+    }
+
+    // saving score
+
+    async saveScore() {
+        const res = await fetch("/game/save-score", {
+            method: "POST",
+            body: JSON.stringify(this.score),
+        });
+        if (res.ok) {
+            console.info("Score saved!");
+        } else {
+            console.error("Can't save score");
         }
     }
 }

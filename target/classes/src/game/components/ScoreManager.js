@@ -1,6 +1,6 @@
 import { sleep } from "Root/utils.js";
 
-export default class LevelLoader {
+export default class ScoreManager {
     constructor(renderer) {
         this.score = 0;
         this.levelRenderer = renderer;
@@ -11,6 +11,15 @@ export default class LevelLoader {
         const scoreNode = document.getElementById("scoreText");
         scoreNode.innerText = `Score: ${this.score}`;
     }
+
+    prepare() {
+        const btn = document.getElementById("saveScore");
+        btn.onclick = () => {
+            this.saveScore();
+        };
+    }
+
+    // actions changing score
 
     onPlayerHit() {
         this.score--;
@@ -25,6 +34,7 @@ export default class LevelLoader {
     // enemy attacking detection
 
     startEnemyAttacking() {
+        // start interval decrementing score
         const attackInterval = setInterval(() => {
             this.makeAttack(false);
         }, 500);
@@ -32,28 +42,28 @@ export default class LevelLoader {
     }
 
     stopEnemyAttacking() {
+        // stop interval decrementing score
         let attackInterval = this.scoreIntevals.enemy.pop();
         clearInterval(attackInterval);
     }
 
     startPlayerAttacking(enemy) {
+        // check if is started some interval for that enemy
         let correctInterval =
             this.scoreIntevals.player["e-" + enemy.getContainer().uuid];
-        // check if is started some interval
         if (correctInterval != null) {
             return;
         }
+        // start interval incrementing score
         let attackInterval = setInterval(() => {
             this.makeAttack(true);
         }, 500);
-        this.scoreIntevals.player["e-" + enemy.getContainer().uuid] = attackInterval;
-        console.log(
-            "Start player attacking, inters",
-            JSON.stringify(this.scoreIntevals.player)
-        );
+        this.scoreIntevals.player["e-" + enemy.getContainer().uuid] =
+            attackInterval;
     }
 
     stopPlayerAttacking(enemy) {
+        // stop interval incrementing score for specified enemy
         let attackInterval =
             this.scoreIntevals.player["e-" + enemy.getContainer().uuid];
         clearInterval(attackInterval);
@@ -65,6 +75,20 @@ export default class LevelLoader {
             this.onEnemyHit();
         } else {
             this.onPlayerHit();
+        }
+    }
+
+    // saving score
+
+    async saveScore() {
+        const res = await fetch("/game/save-score", {
+            method: "POST",
+            body: JSON.stringify(this.score),
+        });
+        if (res.ok) {
+            console.info("Score saved!");
+        } else {
+            console.error("Can't save score");
         }
     }
 }
