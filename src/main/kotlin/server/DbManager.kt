@@ -7,13 +7,13 @@ class DbManager {
 
     init {
         // make table if it is necessary
-        makeSql("CREATE TABLE IF NOT EXISTS scores (id bigint auto_increment primary key, score INT, time timestamp default CURRENT_TIMESTAMP());")
+        makeSql("CREATE TABLE IF NOT EXISTS scores (id serial primary key, score INT, time timestamp default CURRENT_TIMESTAMP);")
     }
 
     private fun makeConn(): Connection {
         return DriverManager.getConnection(
-            "jdbc:h2:tcp://localhost/~/fps", "sa", ""
-        ) ?: throw Exception("Can't connect to h2 database")
+            "jdbc:postgresql://localhost/fps", "postgres", "zaq1@WSX"
+        ) ?: throw Exception("Can't connect to postgres database")
     }
 
     private fun makeSql(sql: String){
